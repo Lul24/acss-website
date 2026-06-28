@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abandoned Child South Sudan (ACSS) protects vulnerable children affected by conflict through education, psychosocial support, healthcare, nutrition, and reintegration programs.">
+  <meta name="keywords" content="South Sudan, child protection, abandoned children, nonprofit, humanitarian, education, conflict, nutrition">
+  <meta property="og:title" content="ACSS — Abandoned Child South Sudan">
+  <meta property="og:description" content="Protecting children affected by conflict in South Sudan through education, psychosocial support, nutrition, and reintegration.">
+  <meta property="og:image" content="assets/images/hero/hero-home.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>ACSS — Abandoned Child South Sudan | Protecting Children in Conflict</title>
+  
+  <!-- Favicon - Complete Set with Versioning -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/favicon-96x96.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=2">
+  <link rel="icon" href="assets/logo/favicon.ico?v=2" type="image/x-icon">
+  <link rel="manifest" href="assets/logo/site.webmanifest?v=2">
+  <meta name="apple-mobile-web-app-title" content="ACSS">
+  <meta name="application-name" content="ACSS">
+  <meta name="msapplication-TileColor" content="#0A4D8C">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Bootstrap 5.3.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
+    :root {
+      --blue: #1a5276;
+      --blue-dark: #0e3a54;
+      --blue-light: #2a7ba8;
+      --green: #2E8B57;
+      --green-dark: #1f6340;
+      --gold: #F4B400;
+      --gold-dark: #c99200;
+    }
+
+    /* ── HERO WITH SLIDESHOW ── */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--blue-dark);
+    }
+
+    .hero-slideshow-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .hero-slide-bg.active {
+      opacity: 1;
+    }
+
+    .hero-slide-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(7, 58, 107, 0.88) 0%,
+        rgba(10, 77, 140, 0.75) 50%,
+        rgba(46, 139, 87, 0.45) 100%
+      );
+    }
+
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(244, 180, 0, 0.15);
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero .lead {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-stat-item {
+      text-align: center;
+    }
+
+    .hero-stat-item .number {
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+
+    .hero-stat-item .label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    .slide-dots-wrapper {
+      position: absolute;
+      bottom: 4rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      z-index: 3;
+    }
+
+    .slide-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .slide-dot.active {
+      background: var(--gold);
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+
+    .slide-dot:hover {
+      background: var(--gold);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 90vh;
+      }
+      .hero-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .hero-stat-item .number {
+        font-size: 1.4rem;
+      }
+      .hero .lead {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero .btn-group {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .hero .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* ── MISSION STRIP ── */
+    .mission-strip {
+      background: var(--blue);
+      padding: 2.5rem 0;
+    }
+    .mission-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+    .mission-item {
+      text-align: center;
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .mission-item:last-child { border-right: none; }
+    .mission-item .icon { 
+      font-size: 1.8rem; 
+      margin-bottom: .75rem; 
+      display: block; 
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .mission-item h3 { color: #fff; font-size: 1rem; margin-bottom: .35rem; font-weight: 700; }
+    .mission-item p { font-size: .82rem; color: rgba(255,255,255,.7); margin: 0; }
+    
+    @media (max-width: 992px) {
+      .mission-strip-grid { grid-template-columns: repeat(3, 1fr); }
+      .mission-item:nth-child(3) { border-right: none; }
+      .mission-item:nth-child(4) { border-bottom: 1px solid rgba(255,255,255,.15); border-right: 1px solid rgba(255,255,255,.15); }
+      .mission-item:nth-child(5) { border-bottom: 1px solid rgba(255,255,255,.15); border-right: none; }
+    }
+    @media (max-width: 768px) {
+      .mission-strip-grid { grid-template-columns: repeat(2, 1fr); }
+      .mission-item { border-bottom: 1px solid rgba(255,255,255,.15); border-right: 1px solid rgba(255,255,255,.15); }
+      .mission-item:nth-child(2) { border-right: none; }
+      .mission-item:nth-child(4) { border-right: none; }
+      .mission-item:nth-child(5) { border-right: 1px solid rgba(255,255,255,.15); }
+    }
+    @media (max-width: 480px) {
+      .mission-strip-grid { grid-template-columns: 1fr; }
+      .mission-item { border-right: none !important; }
+    }
+
+    /* ── FOUNDER QUOTE ── */
+    .founder-quote-section {
+      background: var(--gray-50, #f8f9fa);
+      padding: 64px 0;
+    }
+    .founder-quote-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .founder-photo-wrap {
+      position: relative;
+      text-align: center;
+    }
+    .founder-photo-wrap img {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      border: 4px solid #fff;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+    .founder-photo-wrap img:hover {
+      transform: scale(1.03);
+    }
+    .years-badge {
+      position: absolute;
+      bottom: -0.5rem;
+      right: -0.5rem;
+      background: var(--gold);
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: var(--shadow-lg, 0 16px 40px rgba(0,0,0,0.12));
+      border: 4px solid #fff;
+    }
+    .years-badge .num {
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-primary, #1A1A2E);
+      display: block;
+      line-height: 1;
+    }
+    .years-badge span {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--text-primary, #1A1A2E);
+      line-height: 1.2;
+    }
+    @media (max-width: 768px) {
+      .founder-quote-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founder-photo-wrap img { max-width: 260px; }
+      .years-badge { 
+        width: 80px;
+        height: 80px;
+        bottom: -0.5rem;
+        right: 0.5rem;
+      }
+      .years-badge .num { font-size: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .founder-photo-wrap img { max-width: 200px; }
+      .years-badge { 
+        width: 70px;
+        height: 70px;
+      }
+      .years-badge .num { font-size: 1.2rem; }
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 139, 87, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.blue {
+      color: var(--blue);
+      background: rgba(26, 82, 118, 0.08);
+    }
+    .section-tag.gold {
+      color: var(--gold-dark);
+      background: rgba(244, 180, 0, 0.08);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary, #6C757D);
+      font-size: 0.95rem;
+    }
+
+    /* ── QUOTE BLOCK ── */
+    .quote-block {
+      position: relative;
+      padding: 2rem;
+      background: var(--gray-50, #f8f9fa);
+      border-radius: var(--radius-lg, 16px);
+      border-left: 4px solid var(--gold);
+    }
+    .quote-block blockquote {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-primary, #1A1A2E);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .quote-author .author-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .quote-author-info strong {
+      display: block;
+      font-size: 0.85rem;
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      color: var(--text-primary, #1A1A2E);
+    }
+    .quote-author-info span {
+      font-size: 0.75rem;
+      color: var(--text-tertiary, #6C757D);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-lg {
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary, #1A1A2E);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #fff;
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+    .btn-green:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    .btn-outline-blue:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+    .btn-outline-green {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+    .btn-outline-green:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* ── PROGRAM CARDS ── */
+    .program-card {
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      border: 1px solid var(--gray-200, #E9ECEF);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(26, 82, 118, 0.1);
+      border-color: rgba(26, 82, 118, 0.12);
+    }
+    .program-card-img {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--gray-100, #f1f3f5);
+    }
+    .program-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .program-card:hover .program-card-img img {
+      transform: scale(1.03);
+    }
+    .program-icon-badge {
+      position: absolute;
+      bottom: 0.8rem;
+      right: 0.8rem;
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .program-card-body {
+      padding: 1.5rem;
+    }
+    .program-card-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .program-card-body p {
+      font-size: 0.9rem;
+      color: var(--text-secondary, #4A4A5E);
+      margin-bottom: 1rem;
+    }
+    .program-card-footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-200, #E9ECEF);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .program-stat {
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: 0.8rem;
+    }
+    .program-stat strong {
+      color: var(--blue);
+      font-size: 1.1rem;
+      display: block;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 139, 87, 0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── IMPACT BAR ── */
+    .impact-bar {
+      background: var(--text-primary, #1A1A2E);
+      padding: 56px 0;
+    }
+    .impact-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .impact-bar-item .impact-number {
+      font-family: var(--font-head, 'Poppins', sans-serif);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1;
+      display: block;
+    }
+    .impact-number.white { color: #fff; }
+    .impact-number.gold { color: var(--gold); }
+    .impact-number.green { color: var(--green); }
+    .impact-bar-item .label {
+      color: rgba(255,255,255,.6);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: .4rem;
+    }
+    @media (max-width: 768px) {
+      .impact-bar-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--green) 100%);
+      padding: 64px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section .container {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.8);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 1rem auto 2rem;
+    }
+
+    /* ── PARTNER LOGOS ── */
+    .partner-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 2.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .partner-logos .logo-placeholder {
+      height: 48px;
+      min-width: 100px;
+      padding: 0 1rem;
+      border-radius: 8px;
+      background: var(--gray-100, #f1f3f5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--text-tertiary, #6C757D);
+      border: 1px solid var(--gray-200, #E9ECEF);
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-section {
+      background: var(--blue-dark);
+      padding: 64px 0;
+    }
+    .video-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      max-width: 800px;
+      margin: 2rem auto 0;
+      cursor: pointer;
+      background: var(--gray-800, #343A40);
+    }
+    .video-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-play-btn {
+      width: 72px;
+      height: 72px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--blue);
+      transition: all .3s;
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+      border: none;
+      cursor: pointer;
+    }
+    .video-play-btn:hover {
+      background: var(--gold);
+      transform: scale(1.08);
+    }
+
+    /* ── STORIES SECTION ── */
+    .stories-section {
+      padding: 64px 0;
+      background: var(--gray-50, #f8f9fa);
+    }
+    .story-card {
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      border: 1px solid var(--gray-200, #E9ECEF);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(26, 82, 118, 0.1);
+    }
+    .story-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--gray-100, #f1f3f5);
+    }
+    .story-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .story-card-body {
+      padding: 1.5rem;
+    }
+    .story-card-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .story-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-secondary, #4A4A5E);
+      margin: 0;
+    }
+
+    /* ── NEWS CARDS ── */
+    .news-card {
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      border: 1px solid var(--gray-200, #E9ECEF);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(26, 82, 118, 0.1);
+    }
+    .news-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--gray-100, #f1f3f5);
+    }
+    .news-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .news-card-body {
+      padding: 1.5rem;
+    }
+    .news-card-body h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .news-card-body h4 a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .news-card-body h4 a:hover {
+      color: var(--blue);
+    }
+    .news-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .news-meta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+    .news-meta .cat {
+      background: rgba(46, 139, 87, 0.08);
+      color: var(--green);
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE BOOTSTRAP OVERRIDES ── */
+    @media (max-width: 992px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .section { padding: 48px 0; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+    }
+
+    [data-delay="100"] { transition-delay: .1s !important; }
+    [data-delay="200"] { transition-delay: .2s !important; }
+    [data-delay="300"] { transition-delay: .3s !important; }
+    [data-delay="400"] { transition-delay: .4s !important; }
+  </style>
+</head>
+<body>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>Helsinki, Finland</span>
+        <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+358452785499">+358 45 278 5499</a>
+        <div class="lang-switch" aria-label="Language selector">
+          <a href="#" data-lang="en" class="active">EN</a>
+          <a href="#" data-lang="ar">عر</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
+        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
+        <div class="nav-logo-text">
+          <strong>ACSS</strong>
+          <span>Abandoned Child South Sudan</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link-dropdown">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="programs.html" class="nav-link-dropdown">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="impact.html" class="nav-link-dropdown">Impact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="impact.html">Impact Overview</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+            <li><a href="impact-map.html">Impact Map</a></li>
+            <li><a href="annual-reports.html">Annual Reports</a></li>
+            <li><a href="financial-reports.html">Financial Reports</a></li>
+            <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
+          </ul>
+        </li>
+        <!-- NEWS DROPDOWN REMOVED -->
+        <li class="nav-item-dropdown">
+          <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="campaigns.html">Fundraising Campaigns</a></li>
+          </ul>
+        </li>
+        <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="donate.html" class="btn btn-primary btn-sm" data-track="donate">Donate Now</a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE NAV ══ -->
+  <div class="nav-overlay"></div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36">
+        <div class="nav-logo-text"><strong>ACSS</strong></div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+    </div>
+    
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link active">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-about">About <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-about">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#mission">Mission &amp; Vision</a>
+          <a href="founder.html">Founder</a>
+          <a href="leadership.html">Leadership Team</a>
+          <a href="governance.html">Governance</a>
+          <a href="policies.html">Policies &amp; Safeguarding</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-programs">
+          <a href="child-protection.html">Child Protection</a>
+          <a href="education.html">Education</a>
+          <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
+          <a href="nutrition.html">Nutrition &amp; Food Security</a>
+          <a href="reintegration.html">Family Reintegration</a>
+          <a href="emergency-response.html">Emergency Response</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-impact">Impact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-impact">
+          <a href="impact.html">Impact Overview</a>
+          <a href="success-stories.html">Success Stories</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="impact-map.html">Impact Map</a>
+          <a href="annual-reports.html">Annual Reports</a>
+          <a href="financial-reports.html">Financial Reports</a>
+          <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
+        </div>
+      </div>
+      <!-- NEWS DROPDOWN REMOVED -->
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-involved">
+          <a href="donate.html">Donate</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="partners.html">Partner With Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="campaigns.html">Fundraising Campaigns</a>
+        </div>
+      </div>
+      <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- ══ HERO SECTION WITH SLIDESHOW ════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <!-- Background Slideshow -->
+      <div class="hero-slideshow-container">
+        <div class="hero-slide-bg active" style="background-image: url('assets/images/hero/hero-home.jpg');"></div>
+        <div class="hero-slide-bg" style="background-image: url('assets/images/hero/hero-home1.jpg');"></div>
+        <div class="hero-slide-bg" style="background-image: url('assets/images/hero/hero-home2.jpg');"></div>
+        <div class="hero-slide-bg" style="background-image: url('assets/images/hero/hero-home3.jpg');"></div>
+        <div class="hero-slide-bg" style="background-image: url('assets/images/hero/hero-home4.jpg');"></div>
+      </div>
+
+      <!-- Slide Dots -->
+      <div class="slide-dots-wrapper">
+        <span class="slide-dot active" data-slide="0"></span>
+        <span class="slide-dot" data-slide="1"></span>
+        <span class="slide-dot" data-slide="2"></span>
+        <span class="slide-dot" data-slide="3"></span>
+        <span class="slide-dot" data-slide="4"></span>
+      </div>
+
+      <!-- Content -->
+      <div class="container" style="width:100%;position:relative;z-index:2;">
+        <div class="hero-content-wrapper">
+          <span class="hero-tag">Protecting Children in Conflict</span>
+          <h1>Every Child Deserves a <em>Safe Future</em></h1>
+          <p class="lead">
+            ACSS works on the front lines of South Sudan's humanitarian crisis — providing protection, education, mental health support, nutrition, and family reintegration to the world's most vulnerable children.
+          </p>
+          <div class="btn-group" role="group" aria-label="Hero actions">
+            <a href="donate.html" class="btn btn-primary btn-lg" data-track="donate">
+              Donate Now — Save a Life
+            </a>
+            <a href="about.html#founder" class="btn btn-secondary btn-lg">
+              Our Founder's Story
+            </a>
+          </div>
+          <div class="hero-stats" aria-label="Key statistics">
+            <div class="hero-stat-item">
+              <span class="number" data-count="12500">0</span>
+              <span class="label">Children Helped</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="number" data-count="8">0</span>
+              <span class="label">Field Offices</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="number" data-count="97">0</span>
+              <span class="label">% Funds to Programs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ══ MISSION PILLARS ══ -->
+    <div class="mission-strip" aria-label="Our five pillars">
+      <div class="container">
+        <div class="mission-strip-grid">
+          <div class="mission-item" data-reveal>
+            <span class="icon" aria-hidden="true">Protect</span>
+            <h3>Child Protection</h3>
+            <p>Safe spaces and legal protection for children at risk</p>
+          </div>
+          <div class="mission-item" data-reveal data-delay="100">
+            <span class="icon" aria-hidden="true">Educate</span>
+            <h3>Education</h3>
+            <p>Quality learning opportunities for out-of-school children</p>
+          </div>
+          <div class="mission-item" data-reveal data-delay="200">
+            <span class="icon" aria-hidden="true">Heal</span>
+            <h3>Mental Health</h3>
+            <p>Psychosocial support and trauma-informed care</p>
+          </div>
+          <div class="mission-item" data-reveal data-delay="300">
+            <span class="icon" aria-hidden="true">Nourish</span>
+            <h3>Nutrition</h3>
+            <p>Food security and malnutrition treatment</p>
+          </div>
+          <div class="mission-item" data-reveal data-delay="400">
+            <span class="icon" aria-hidden="true">Reunite</span>
+            <h3>Reintegration</h3>
+            <p>Family reunification and community reintegration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ FOUNDER STORY ═════════════════════════════════════ -->
+    <section class="founder-quote-section" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="founder-quote-layout">
+          <div class="founder-photo-wrap" data-reveal>
+            <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu - Founder of ACSS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;width:100%;aspect-ratio:1/1;border-radius:50%;background:var(--gray-200);align-items:center;justify-content:center;color:var(--text-tertiary);font-size:0.85rem;border:2px dashed var(--gray-300);">
+              <span>Upload: assets/images/team/founder-portrait.jpg</span>
+            </div>
+            <div class="years-badge">
+              <span class="num">2</span>
+              <span>Years of Service</span>
+            </div>
+          </div>
+
+          <div data-reveal data-delay="200">
+            <span class="section-tag gold">A Message from Our Founder</span>
+            <h2 id="founder-heading">From Child Soldier to Child Champion</h2>
+            <p class="lead" style="margin-top:1rem;">
+              Gatkuoth Liah Diu was a former child soldier. As a child of about ten years old, he lived in Block 5A in southern Sudan when the region's oil fields were being established. He was notably featured in historical television footage—which was submitted as evidence in the Swedish court—seen as a young boy guarding the oil facilities and accompanying armed actors.
+            </p>
+            <p style="margin-top:1rem;">
+              Today, ACSS exists so that no child has to experience what he did. Every program we run, every safe space we create, every child we reunite with their family — it all comes from a place of lived understanding. We don't just help children survive. We help them thrive.
+            </p>
+
+            <div class="quote-block" style="margin-top:2rem;">
+              <blockquote>
+                "I was that abandoned child. That is why I will never stop fighting for the ones who still are."
+              </blockquote>
+              <div class="quote-author">
+                <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu" class="author-img" onerror="this.style.display='none';">
+                <div class="quote-author-info">
+                  <strong>Gatkuoth Liah Diu</strong>
+                  <span>Founder &amp; Executive Director, ACSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <a href="about.html#founder" class="btn btn-blue">Read the Full Story</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ IMPACT NUMBERS ════════════════════════════════════ -->
+    <div class="impact-bar" aria-label="Our impact in numbers">
+      <div class="container">
+        <div class="impact-bar-grid">
+          <div class="impact-bar-item" data-reveal>
+            <span class="impact-number white" data-count="10">0</span>
+            <p class="label">Children Reached</p>
+          </div>
+          <div class="impact-bar-item" data-reveal data-delay="100">
+            <span class="impact-number gold" data-count="10">0</span>
+            <p class="label">Back in School</p>
+          </div>
+          <div class="impact-bar-item" data-reveal data-delay="200">
+            <span class="impact-number green" data-count="10">0</span>
+            <p class="label">Families Reunited</p>
+          </div>
+          <div class="impact-bar-item" data-reveal data-delay="300">
+            <span class="impact-number white" data-count="10">0</span>
+            <p class="label">Counseling Sessions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PROGRAMS TEASER ══ -->
+    <section class="programs-teaser" aria-labelledby="programs-heading">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag">What We Do</span>
+          <h2 id="programs-heading">Five Programs, One Mission</h2>
+          <p>Our integrated approach ensures every child receives holistic care — from immediate protection to long-term reintegration into their community.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Child Protection -->
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card" data-reveal>
+              <div class="program-card-img">
+                <img src="assets/images/programs/child-protection.jpg" alt="Child Protection Program" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/programs/child-protection.jpg</span>
+                </div>
+                <div class="program-icon-badge" aria-hidden="true">CP</div>
+              </div>
+              <div class="program-card-body">
+                <span class="card-tag">Program 1</span>
+                <h3>Child Protection</h3>
+                <p>Safe houses, legal aid, emergency response, and case management for children separated from their families by conflict.</p>
+                <div class="program-card-footer">
+                  <div class="program-stat">
+                    <strong>10</strong>
+                    <span>Children protected</span>
+                  </div>
+                  <a href="child-protection.html" class="btn btn-outline-blue btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card" data-reveal data-delay="100">
+              <div class="program-card-img">
+                <img src="assets/images/programs/education.jpg" alt="Education Program" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/programs/education.jpg</span>
+                </div>
+                <div class="program-icon-badge" aria-hidden="true">ED</div>
+              </div>
+              <div class="program-card-body">
+                <span class="card-tag">Program 2</span>
+                <h3>Education</h3>
+                <p>Accelerated learning centers, school supplies, teacher training, and safe school environments for displaced children.</p>
+                <div class="program-card-footer">
+                  <div class="program-stat">
+                    <strong>10</strong>
+                    <span>Students enrolled</span>
+                  </div>
+                  <a href="education.html" class="btn btn-outline-blue btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mental Health -->
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card" data-reveal data-delay="200">
+              <div class="program-card-img">
+                <img src="assets/images/programs/mental-health.jpg" alt="Mental Health Program" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/programs/mental-health.jpg</span>
+                </div>
+                <div class="program-icon-badge" aria-hidden="true">MH</div>
+              </div>
+              <div class="program-card-body">
+                <span class="card-tag">Program 3</span>
+                <h3>Mental Health</h3>
+                <p>Trauma-informed therapy, group counseling, art therapy, and psychosocial support for war-affected children and youth.</p>
+                <div class="program-card-footer">
+                  <div class="program-stat">
+                    <strong>10</strong>
+                    <span>Sessions delivered</span>
+                  </div>
+                  <a href="mental-health.html" class="btn btn-outline-blue btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nutrition (NEW) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card" data-reveal data-delay="300">
+              <div class="program-card-img">
+                <img src="assets/images/programs/nutrition.jpg" alt="Nutrition Program" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/programs/nutrition.jpg</span>
+                </div>
+                <div class="program-icon-badge" aria-hidden="true">NU</div>
+              </div>
+              <div class="program-card-body">
+                <span class="card-tag">Program 4</span>
+                <h3>Nutrition &amp; Food Security</h3>
+                <p>School feeding programs, malnutrition screening and treatment, agricultural support, and nutrition education for families.</p>
+                <div class="program-card-footer">
+                  <div class="program-stat">
+                    <strong>10</strong>
+                    <span>Children nourished</span>
+                  </div>
+                  <a href="nutrition.html" class="btn btn-outline-blue btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reintegration -->
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card" data-reveal data-delay="400">
+              <div class="program-card-img">
+                <img src="assets/images/programs/reintegration.jpg" alt="Reintegration Program" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/programs/reintegration.jpg</span>
+                </div>
+                <div class="program-icon-badge" aria-hidden="true">RI</div>
+              </div>
+              <div class="program-card-body">
+                <span class="card-tag">Program 5</span>
+                <h3>Reintegration</h3>
+                <p>Family tracing, community mediation, vocational training, and follow-up support for sustainable reintegration.</p>
+                <div class="program-card-footer">
+                  <div class="program-stat">
+                    <strong>10</strong>
+                    <span>Families reunited</span>
+                  </div>
+                  <a href="reintegration.html" class="btn btn-outline-blue btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;" data-reveal>
+          <a href="programs.html" class="btn btn-blue btn-lg">Explore All Programs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ VIDEO SECTION ═════════════════════════════════════ -->
+    <section class="video-section" aria-labelledby="video-heading">
+      <div class="container" style="text-align:center;">
+        <span class="section-tag white">See Our Work</span>
+        <h2 id="video-heading" style="color:#fff;margin-top:.5rem;">Stories From the Field</h2>
+        <p style="color:rgba(255,255,255,.75);max-width:560px;margin:1rem auto 0;">
+          Witness the direct impact of your support through the eyes of the children we serve.
+        </p>
+        <div class="video-wrapper" data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID" aria-label="ACSS field video">
+          <img src="assets/videos/field-video-thumbnail.jpg" alt="Video thumbnail - ACSS field work" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-800);color:#fff;font-size:4rem;border:none;">
+            <span style="font-size:0.8rem;">Upload: assets/videos/field-video-thumbnail.jpg</span>
+          </div>
+          <div class="video-overlay">
+            <button class="video-play-btn" aria-label="Play video">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STORIES ════════════════════════════════════════════ -->
+    <section class="stories-section" aria-labelledby="stories-heading">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag">Real Impact</span>
+          <h2 id="stories-heading">Children Who Changed Because of You</h2>
+          <p>Behind every statistic is a child with a name, a story, and a future made possible by your generosity.</p>
+        </div>
+
+        <div class="row g-4" style="margin-top:1rem;">
+          <!-- Story Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="story-card" data-reveal>
+              <div class="story-card-img">
+                <img src="assets/images/stories/story-amara.jpg" alt="Amara's story" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/stories/story-amara.jpg</span>
+                </div>
+              </div>
+              <div class="story-card-body">
+                <span class="card-tag">Child Protection · Education</span>
+                <h3>Amara's Second Chance</h3>
+                <p>At 9, Amara fled her village during a raid and arrived at our center alone and terrified. Today, she leads her class and dreams of becoming a doctor.</p>
+                <a href="success-stories.html" class="btn btn-outline-green btn-sm" style="margin-top:1rem;">Read Story</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Story Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="story-card" data-reveal data-delay="150">
+              <div class="story-card-img">
+                <img src="assets/images/stories/story-david.jpg" alt="David's story" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/stories/story-david.jpg</span>
+                </div>
+              </div>
+              <div class="story-card-body">
+                <span class="card-tag">Mental Health · Reintegration</span>
+                <h3>David Finds His Way Home</h3>
+                <p>Separated from his family for three years, David arrived unable to speak. Months of psychosocial support helped him heal — and find his mother.</p>
+                <a href="success-stories.html" class="btn btn-outline-green btn-sm" style="margin-top:1rem;">Read Story</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Story Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="story-card" data-reveal data-delay="300">
+              <div class="story-card-img">
+                <img src="assets/images/stories/story-grace.jpg" alt="Grace's story" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/stories/story-grace.jpg</span>
+                </div>
+              </div>
+              <div class="story-card-body">
+                <span class="card-tag">Education · Vocational Training</span>
+                <h3>Grace Builds Her Future</h3>
+                <p>At 16, Grace had never attended a single day of school. After two years in our accelerated learning program, she passed her national exams with distinction.</p>
+                <a href="success-stories.html" class="btn btn-outline-green btn-sm" style="margin-top:1rem;">Read Story</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;" data-reveal>
+          <a href="success-stories.html" class="btn btn-green btn-lg">Read More Stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PARTNERS ══════════════════════════════════════════ -->
+    <section class="partners-section" aria-labelledby="partners-heading">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:2.5rem;" data-reveal>
+          <span class="section-tag blue">Trusted By</span>
+          <h2 id="partners-heading" style="font-size:1.5rem;margin-top:.5rem;">Our Partners &amp; Supporters</h2>
+        </div>
+        <div class="partner-logos" aria-label="Partner organization logos">
+          <div class="logo-placeholder">Update soon</div>
+          <div class="logo-placeholder">Update soon</div>
+          <div class="logo-placeholder">Update soon</div>
+          <div class="logo-placeholder">Update soon</div>
+          <div class="logo-placeholder">Update soon</div>
+          <div class="logo-placeholder">Update soon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ NEWS SECTION ════════ -->
+    <section class="news-section" aria-labelledby="news-heading">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;" data-reveal>
+          <div class="section-header" style="margin-bottom:0;">
+            <span class="section-tag">Latest Updates</span>
+            <h2 id="news-heading">News from South Sudan</h2>
+          </div>
+          <!-- NEWS LINK REMOVED -->
+          <span style="font-size:0.85rem;color:var(--text-tertiary);">Stay connected for updates</span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="news-card" data-reveal>
+              <div class="news-card-img">
+                <img src="assets/images/news/news-1.jpg" alt="News image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/news/news-1.jpg</span>
+                </div>
+              </div>
+              <div class="news-card-body">
+                <div class="news-meta">
+                  <span class="cat">Program Update</span>
+                  <span>June 2025</span>
+                </div>
+                <h4><a href="impact.html">New Learning Center Opens in Juba, Reaching 500 More Children</a></h4>
+                <p>ACSS officially opened its seventh accelerated learning center in Juba's Gudele district, welcoming 500 children who had no access to education.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="news-card" data-reveal data-delay="150">
+              <div class="news-card-img">
+                <img src="assets/images/news/news-2.jpg" alt="News image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/news/news-2.jpg</span>
+                </div>
+              </div>
+              <div class="news-card-body">
+                <div class="news-meta">
+                  <span class="cat">Partnership</span>
+                  <span>May 2025</span>
+                </div>
+                <h4><a href="impact.html">ACSS and UNICEF Join Forces on Child Protection Initiative</a></h4>
+                <p>A landmark partnership agreement was signed to expand child protection services across three new counties in South Sudan.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="news-card" data-reveal data-delay="300">
+              <div class="news-card-img">
+                <img src="assets/images/news/news-3.jpg" alt="News image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:var(--gray-100);color:var(--text-tertiary);font-size:0.8rem;border:none;">
+                  <span>Upload: assets/images/news/news-3.jpg</span>
+                </div>
+              </div>
+              <div class="news-card-body">
+                <div class="news-meta">
+                  <span class="cat">Annual Report</span>
+                  <span>April 2025</span>
+                </div>
+                <h4><a href="impact.html">2025 Annual Report: Impact, Transparency, and Hope</a></h4>
+                <p>Our 2025 Annual Report reveals record-breaking impact across all program areas, with a 97% fund allocation rate to direct programs.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FINAL CTA ══════════════════════════════════════════ -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <span class="section-tag white" data-reveal>Make a Difference Today</span>
+        <h2 id="cta-heading" data-reveal>A Child Is Waiting for Your Help</h2>
+        <p data-reveal>Right now, thousands of children in South Sudan are without protection, education, nutrition, or hope. Your donation — however large or small — changes that.</p>
+        <div class="btn-group" style="justify-content:center;" data-reveal>
+          <a href="donate.html" class="btn btn-primary btn-lg" data-track="donate">Donate Now</a>
+          <a href="get-involved.html" class="btn btn-secondary btn-lg">Other Ways to Help</a>
+        </div>
+        <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:1.5rem;" data-reveal>
+          Secure · Tax-deductible · 97% goes directly to programs
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
+          <p>Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="#" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.14 0-2.063-.925-2.063-2.065 0-1.14.923-2.065 2.063-2.065 1.14 0 2.063.925 2.063 2.065 0 1.14-.923 2.065-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About ACSS</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+            <li><a href="impact.html">Impact &amp; Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get stories, updates, and impact reports from South Sudan.</p>
+          <form class="footer-newsletter-form" aria-label="Newsletter signup">
+            <input type="email" placeholder="Your email" aria-label="Email address" required>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Abandoned Child South Sudan (ACSS). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="safeguarding.html">Safeguarding</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="donor-privacy.html">Donor Privacy</a>
+          <a href="board.html">Board</a>
+          <a href="financials.html">Financials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-inner">
+      <p>We use cookies to improve your experience. See our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-sm cookie-decline">Decline</button>
+        <button class="btn btn-primary btn-sm cookie-accept">Accept</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  
+  <!-- Hero Slideshow Functionality -->
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.hero-slide-bg');
+      const dots = document.querySelectorAll('.slide-dot');
+      let currentSlide = 0;
+      let slideInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) next = 0;
+        showSlide(next);
+        resetInterval();
+      }
+
+      function resetInterval() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          showSlide(i);
+          resetInterval();
+        });
+      });
+
+      if (slides.length > 0) {
+        showSlide(0);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+    })();
+  </script>
+
+</body>
+</html>

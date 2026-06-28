@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest news, updates, and stories from Abandoned Child South Sudan (ACSS). Read our blog and stay informed about our impact.">
+  <meta property="og:title" content="News & Updates — ACSS">
+  <meta property="og:image" content="assets/images/hero/news-hero.jpg">
+  <title>News & Updates — ACSS | Abandoned Child South Sudan</title>
+  <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5.3.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
+    :root {
+      --blue: #1a5276;
+      --blue-dark: #0e3a54;
+      --green: #2E8B57;
+      --gold: #F4B400;
+      --gold-dark: #c99200;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(26, 82, 118, 0.06);
+      --shadow-md: 0 8px 20px rgba(26, 82, 118, 0.10);
+      --shadow-lg: 0 16px 40px rgba(26, 82, 118, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: 0.25s ease;
+    }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero.beige-after::after {
+      background: var(--gray-50);
+    }
+    .page-hero h1 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      text-align: center;
+    }
+    .page-hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .page-hero .section-tag.white {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 139, 87, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
+    /* ── NEWS FILTERS ── */
+    .news-filters {
+      background: #fff;
+      border-bottom: 2px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 72px;
+      z-index: 100;
+    }
+    .filter-group { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .filter-label { font-size: 0.8rem; font-weight: 600; color: var(--text-tertiary); margin-right: 0.5rem; }
+    .filter-btn {
+      padding: 0.35rem 0.9rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 100px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      transition: all var(--transition);
+      background: #fff;
+    }
+    .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    /* ── FEATURED NEWS ── */
+    .featured-news {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .featured-img {
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-xl, 24px);
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-img .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
+    }
+    .featured-content h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0.75rem; }
+    .featured-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .featured-date { font-size: 0.8rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 0.5rem; }
+    .featured-category { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); }
+
+    /* ── ARTICLE CARDS ── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .article-card {
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      border: 1px solid var(--gray-200);
+      height: 100%;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .article-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+    .article-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-card-img .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      border: 2px dashed var(--gray-300);
+    }
+    .article-card-body { padding: 1.25rem; }
+    .article-meta { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--text-tertiary); }
+    .article-category { background: rgba(46,139,87,.1); color: var(--green); font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px; font-size: 0.65rem; }
+    .article-card h3 { font-size: 1rem; margin-bottom: 0.4rem; line-height: 1.3; }
+    .article-card h3 a { color: var(--text-primary); text-decoration: none; transition: color 0.2s; }
+    .article-card h3 a:hover { color: var(--blue); }
+    .article-card p { font-size: 0.85rem; color: var(--text-tertiary); margin: 0; }
+    .article-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200); }
+    .read-time { font-size: 0.75rem; color: var(--text-tertiary); }
+    .read-more { font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blue); transition: color var(--transition); text-decoration: none; }
+    .article-card:hover .read-more { color: var(--green); }
+
+    /* ── PAGINATION ── */
+    .pagination { display: flex; justify-content: center; gap: 0.4rem; margin-top: 2.5rem; }
+    .page-btn {
+      width: 36px; height: 36px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-sm, 6px);
+      background: #fff;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .page-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .page-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-form {
+      max-width: 480px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md, 10px);
+      font-size: 0.9rem;
+    }
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,82,118,.08);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-lg {
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    .btn-outline-blue:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .featured-news { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .articles-grid { grid-template-columns: 1fr; }
+      .news-filters { top: 60px; padding: 0.75rem 0; }
+      .newsletter-form { flex-direction: column; }
+      .page-hero { padding: 3rem 0 2rem; }
+    }
+    @media (max-width: 480px) {
+      .filter-btn { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+      .featured-content h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left"><span>📍 Juba, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+    </div>
+  </div>
+
+  <!-- ══ NAVIGATION WITH DROPDOWNS ════════════════════════════ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
+        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
+        <div class="nav-logo-text">
+          <strong>ACSS</strong>
+          <span>Abandoned Child South Sudan</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link-dropdown">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="programs.html" class="nav-link-dropdown">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="impact.html" class="nav-link-dropdown">Impact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="impact.html">Impact Overview</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+            <li><a href="impact-map.html">Impact Map</a></li>
+            <li><a href="annual-reports.html">Annual Reports</a></li>
+            <li><a href="financial-reports.html">Financial Reports</a></li>
+            <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="news.html" class="nav-link-dropdown active">News ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="news.html" class="active">Latest News</a></li>
+            <li><a href="press-releases.html">Press Releases</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="media-coverage.html">Media Coverage</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="campaigns.html">Fundraising Campaigns</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="contact.html" class="nav-link-dropdown">Contact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="locations.html">Office Locations</a></li>
+            <li><a href="report-concern.html">Report a Concern</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="donate.html" class="btn btn-primary btn-sm" data-track="donate">Donate Now</a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE NAV WITH DROPDOWNS ════════════════════════════ -->
+  <div class="nav-overlay"></div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36">
+        <div class="nav-logo-text"><strong>ACSS</strong></div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+    </div>
+    
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-about">About <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-about">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#mission">Mission &amp; Vision</a>
+          <a href="founder.html">Founder</a>
+          <a href="leadership.html">Leadership Team</a>
+          <a href="governance.html">Governance</a>
+          <a href="policies.html">Policies &amp; Safeguarding</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-programs">
+          <a href="child-protection.html">Child Protection</a>
+          <a href="education.html">Education</a>
+          <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
+          <a href="reintegration.html">Family Reintegration</a>
+          <a href="emergency-response.html">Emergency Response</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-impact">Impact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-impact">
+          <a href="impact.html">Impact Overview</a>
+          <a href="success-stories.html">Success Stories</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="impact-map.html">Impact Map</a>
+          <a href="annual-reports.html">Annual Reports</a>
+          <a href="financial-reports.html">Financial Reports</a>
+          <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle open" data-target="mobile-news">News <span class="arrow">▾</span></button>
+        <div class="mobile-submenu open" id="mobile-news">
+          <a href="news.html" class="active">Latest News</a>
+          <a href="press-releases.html">Press Releases</a>
+          <a href="publications.html">Publications</a>
+          <a href="media-coverage.html">Media Coverage</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-involved">
+          <a href="donate.html">Donate</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="partners.html">Partner With Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="campaigns.html">Fundraising Campaigns</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-contact">Contact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-contact">
+          <a href="contact.html">Contact Us</a>
+          <a href="locations.html">Office Locations</a>
+          <a href="report-concern.html">Report a Concern</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO - CENTERED -->
+    <section class="page-hero beige-after" aria-label="News & Updates">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span aria-current="page">News</span>
+        </nav>
+        <span class="section-tag white">Latest Updates</span>
+        <h1>News From South Sudan</h1>
+        <p class="lead">Stories, program updates, partnerships, and impact from our field offices. Sign up below to get updates delivered to your inbox.</p>
+      </div>
+    </section>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="news-grid-section" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="featured-news" data-reveal>
+          <div class="featured-img">
+            <img src="assets/images/news/featured-news.jpg" alt="Featured news image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;">
+              <span>Upload: assets/images/news/featured-news.jpg</span>
+            </div>
+          </div>
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="featured-category">Program Update</span>
+              <span class="featured-date">June 2025</span>
+            </div>
+            <h2 id="news-heading">New Learning Center Opens in Juba, Reaching 500 More Children</h2>
+            <p style="color:var(--text-tertiary);margin-bottom:1.25rem;">ACSS officially opened its seventh accelerated learning center in Juba's Gudele district, welcoming 500 additional children who had zero access to quality education. This expansion brings our total reach to 4,700 students across eight education centers.</p>
+            <a href="#" class="btn btn-blue">Read Full Article</a>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="news-filters">
+          <div class="container" style="padding:0;">
+            <div class="filter-group">
+              <span class="filter-label">Filter by:</span>
+              <button class="filter-btn active" data-category="all">All News</button>
+              <button class="filter-btn" data-category="program">Program Updates</button>
+              <button class="filter-btn" data-category="partnership">Partnerships</button>
+              <button class="filter-btn" data-category="impact">Impact Reports</button>
+              <button class="filter-btn" data-category="stories">Stories</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="row g-4" id="articles-grid">
+          <!-- Article 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="partnership" data-reveal>
+              <div class="article-card-img">
+                <img src="assets/images/news/partnership-1.jpg" alt="ACSS and UNICEF partnership" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/partnership-1.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Partnership</span>
+                  <span>May 2025</span>
+                </div>
+                <h3><a href="#">ACSS and UNICEF Join Forces on Child Protection Initiative</a></h3>
+                <p>A landmark partnership agreement expands our child protection services across three new counties in South Sudan, with UNICEF providing technical support and co-funding.</p>
+                <div class="article-footer">
+                  <span class="read-time">5 min read</span>
+                  <span class="read-more">Read →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="impact" data-reveal data-delay="100">
+              <div class="article-card-img">
+                <img src="assets/images/news/impact-1.jpg" alt="Impact report" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/impact-1.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Annual Report</span>
+                  <span>April 2025</span>
+                </div>
+                <h3><a href="impact.html">2025 Annual Report: Impact, Transparency, and Hope</a></h3>
+                <p>Our 2025 Annual Report reveals record-breaking impact across all four program areas, with a 97% fund allocation rate to direct programs.</p>
+                <div class="article-footer">
+                  <span class="read-time">Downloadable PDF</span>
+                  <span class="read-more">Download →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="program" data-reveal data-delay="200">
+              <div class="article-card-img">
+                <img src="assets/images/news/program-1.jpg" alt="Girls' Education Initiative" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/program-1.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Program Update</span>
+                  <span>March 2025</span>
+                </div>
+                <h3><a href="#">Girls' Education Initiative Reaches 1,200 Students</a></h3>
+                <p>Our targeted girls' education programme now supports 1,200 girls across all field offices, with a 89% attendance rate and improved retention.</p>
+                <div class="article-footer">
+                  <span class="read-time">4 min read</span>
+                  <span class="read-more">Read →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="stories" data-reveal>
+              <div class="article-card-img">
+                <img src="assets/images/news/story-1.jpg" alt="Amara's story" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/story-1.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Stories</span>
+                  <span>February 2025</span>
+                </div>
+                <h3><a href="success-stories.html">Amara's Journey From Trauma to Top Student</a></h3>
+                <p>At nine years old, Amara arrived at our safe house unable to speak. Nine months later, she's leading her class and dreaming of medical school.</p>
+                <div class="article-footer">
+                  <span class="read-time">7 min read</span>
+                  <span class="read-more">Read →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="impact" data-reveal data-delay="100">
+              <div class="article-card-img">
+                <img src="assets/images/news/impact-2.jpg" alt="Mental Health Impact Report" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/impact-2.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Impact Reports</span>
+                  <span>January 2025</span>
+                </div>
+                <h3><a href="#">Mental Health Program Reaches Milestone: 6,000 Sessions Delivered</a></h3>
+                <p>Our psychosocial support program has now delivered 6,000+ counseling sessions, with 91% of participants showing improved wellbeing scores.</p>
+                <div class="article-footer">
+                  <span class="read-time">5 min read</span>
+                  <span class="read-more">Read →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="article-card" data-category="partnership" data-reveal data-delay="200">
+              <div class="article-card-img">
+                <img src="assets/images/news/partnership-2.jpg" alt="Corporate Partnership" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="img-placeholder" style="display:none;">
+                  <span>Upload: assets/images/news/partnership-2.jpg</span>
+                </div>
+              </div>
+              <div class="article-card-body">
+                <div class="article-meta">
+                  <span class="article-category">Partnership</span>
+                  <span>December 2024</span>
+                </div>
+                <h3><a href="#">Major Corporate Grant Announced: $2.5M Investment in Child Protection</a></h3>
+                <p>[Company Name] commits $2.5 million over three years to expand ACSS's child protection program across South Sudan's most vulnerable regions.</p>
+                <div class="article-footer">
+                  <span class="read-time">4 min read</span>
+                  <span class="read-more">Read →</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section bg-light" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="section-header center" style="max-width:560px;" data-reveal>
+          <span class="section-tag">Stay Informed</span>
+          <h2 id="newsletter-heading">Get Updates Delivered to Your Inbox</h2>
+          <p>Subscribe to our monthly newsletter for impact stories, program updates, and news from South Sudan.</p>
+        </div>
+        <form class="newsletter-form" data-reveal>
+          <input type="email" placeholder="your@email.com" required aria-label="Email for newsletter">
+          <button type="submit" class="btn btn-blue" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
+          <p style="margin-top:1rem;">Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, and reintegration.</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="#" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About ACSS</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+            <li><a href="impact.html">Impact &amp; Reports</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get stories, updates, and impact reports from South Sudan.</p>
+          <form class="footer-newsletter-form" aria-label="Newsletter signup">
+            <input type="email" placeholder="Your email" aria-label="Email address" required>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Abandoned Child South Sudan (ACSS). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="safeguarding.html">Safeguarding</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="donor-privacy.html">Donor Privacy</a>
+          <a href="board.html">Board</a>
+          <a href="financials.html">Financials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="cookie-banner"><div class="cookie-inner"><p>We use cookies. See our <a href="cookie-policy.html">Cookie Policy</a>.</p><div class="cookie-actions"><button class="btn btn-sm cookie-decline" style="color:rgba(255,255,255,.6);padding:.4rem 0.8rem;">Decline</button><button class="btn btn-primary btn-sm cookie-accept">Accept</button></div></div></div>
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Category filters
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.dataset.category;
+        document.querySelectorAll('.article-card').forEach(card => {
+          const cardCat = card.dataset.category;
+          card.style.display = (category === 'all' || cardCat === category) ? '' : 'none';
+        });
+      });
+    });
+
+    // Mobile dropdown toggles
+    document.querySelectorAll('.mobile-dropdown-toggle').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.dataset.target;
+        const submenu = document.getElementById(targetId);
+        
+        if (submenu) {
+          submenu.classList.toggle('open');
+          this.classList.toggle('open');
+          
+          document.querySelectorAll('.mobile-submenu').forEach(other => {
+            if (other.id !== targetId && other.classList.contains('open')) {
+              other.classList.remove('open');
+              const otherButton = document.querySelector(`[data-target="${other.id}"]`);
+              if (otherButton) otherButton.classList.remove('open');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACSS Impact Report — See how your donations transform children's lives in South Sudan through transparent data and real outcomes.">
+  <meta property="og:title" content="Our Impact — ACSS">
+  <meta property="og:image" content="assets/images/hero/impact-hero.jpg">
+  <title>Our Impact &amp; Transparency — ACSS</title>
+  <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap 5.3.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
+    :root {
+      --blue: #1a5276;
+      --blue-dark: #0e3a54;
+      --green: #2E8B57;
+      --green-dark: #1f6340;
+      --gold: #F4B400;
+      --gold-dark: #c99200;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(26, 82, 118, 0.06);
+      --shadow-md: 0 8px 20px rgba(26, 82, 118, 0.10);
+      --shadow-lg: 0 16px 40px rgba(26, 82, 118, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: 0.25s ease;
+    }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero.beige-after::after {
+      background: var(--gray-50);
+    }
+    .page-hero h1 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      text-align: center;
+    }
+    .page-hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .page-hero .section-tag.white {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 139, 87, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
+    /* ── IMPACT HERO NUMBERS ── */
+    .impact-hero-numbers {
+      background: #fff;
+      padding: 40px 0;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    .impact-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+    .impact-hero-item {
+      text-align: center;
+      padding: 1.25rem 0.75rem;
+      border-right: 1px solid var(--gray-200);
+    }
+    .impact-hero-item:last-child { border-right: none; }
+    .impact-hero-item .big-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+    }
+    .impact-hero-item .big-num.green { color: var(--green); }
+    .impact-hero-item .big-num.gold { color: var(--gold-dark); }
+    .impact-hero-item p { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.3rem; }
+
+    /* ── FINANCIAL BREAKDOWN ── */
+    .finance-section { padding: 64px 0; background: var(--gray-50); }
+    .donut-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .donut-chart {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: 0 auto;
+    }
+    .donut-chart svg { transform: rotate(-90deg); }
+    .donut-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .donut-center strong {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      display: block;
+      line-height: 1;
+    }
+    .donut-center span { font-size: 0.75rem; color: var(--text-tertiary); }
+    .finance-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      border-radius: var(--radius-md, 10px);
+      margin-bottom: 0.6rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-info { flex: 1; }
+    .legend-info strong { font-family: 'Poppins', sans-serif; font-size: 0.9rem; display: block; }
+    .legend-info span { font-size: 0.78rem; color: var(--text-tertiary); }
+    .legend-pct {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    /* ── PROGRAM BREAKDOWN ── */
+    .program-breakdown { padding: 64px 0; }
+    .breakdown-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 70px;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .breakdown-label { font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 600; }
+    .breakdown-pct {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-align: right;
+    }
+    .progress-bar {
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: 100px;
+      overflow: hidden;
+      margin: 0;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── OUTCOMES TABLE ── */
+    .outcomes-section { padding: 64px 0; background: var(--gray-50); }
+    .outcomes-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .outcomes-table th {
+      background: var(--blue);
+      color: #fff;
+      padding: 0.9rem 1.25rem;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .outcomes-table td {
+      padding: 0.8rem 1.25rem;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.9rem;
+    }
+    .outcomes-table tr:last-child td { border-bottom: none; }
+    .outcomes-table tr:hover td { background: var(--gray-50); }
+    .trend-up { color: var(--green); font-weight: 700; }
+
+    /* ── DOWNLOADS ── */
+    .downloads-section { padding: 64px 0; }
+    .download-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #fff;
+      border-radius: var(--radius-lg, 16px);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      border: 2px solid transparent;
+      text-decoration: none;
+      color: inherit;
+    }
+    .download-card:hover { 
+      border-color: var(--blue); 
+      box-shadow: var(--shadow-md); 
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: inherit;
+    }
+    .download-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md, 10px);
+      background: rgba(26,82,118,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--blue);
+      letter-spacing: 0.05em;
+    }
+    .download-info { flex: 1; }
+    .download-info strong { font-family: 'Poppins', sans-serif; font-size: 0.95rem; display: block; margin-bottom: 0.2rem; }
+    .download-info span { font-size: 0.82rem; color: var(--text-tertiary); }
+    .download-meta { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.25rem; }
+
+    /* ── RECOGNITION ── */
+    .recognition-section { padding: 56px 0; background: var(--blue-dark); }
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .recognition-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg, 16px);
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .recognition-card .award-icon { 
+      font-size: 1.8rem; 
+      margin-bottom: 0.75rem; 
+      display: block; 
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+    }
+    .recognition-card h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.35rem; font-weight: 700; }
+    .recognition-card p { color: rgba(255,255,255,.6); font-size: 0.82rem; margin: 0; }
+    .recognition-card .year { color: var(--gold); font-weight: 700; font-size: 0.78rem; margin-top: 0.5rem; display: block; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-lg {
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    .btn-outline-blue:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .impact-hero-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .impact-hero-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-hero-item { border-bottom: 1px solid var(--gray-200); }
+      .donut-layout { grid-template-columns: 1fr; }
+      .breakdown-row { grid-template-columns: 1fr 1fr; }
+      .breakdown-bar-wrap { display: none; }
+      .recognition-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 3rem 0 2rem; }
+    }
+    @media (max-width: 480px) {
+      .impact-hero-grid { grid-template-columns: 1fr 1fr; }
+      .impact-hero-item .big-num { font-size: 1.6rem; }
+    }
+
+    [data-delay="80"] { transition-delay: .08s !important; }
+    [data-delay="160"] { transition-delay: .16s !important; }
+    [data-delay="240"] { transition-delay: .24s !important; }
+    [data-delay="320"] { transition-delay: .32s !important; }
+    [data-delay="400"] { transition-delay: .4s !important; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+    </div>
+  </div>
+
+  <!-- ══ NAVIGATION WITH DROPDOWNS ══ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
+        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
+        <div class="nav-logo-text">
+          <strong>ACSS</strong>
+          <span>Abandoned Child South Sudan</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link-dropdown">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="programs.html" class="nav-link-dropdown">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="impact.html" class="nav-link-dropdown active">Impact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="impact.html" class="active">Impact Overview</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+            <li><a href="impact-map.html">Impact Map</a></li>
+            <li><a href="annual-reports.html">Annual Reports</a></li>
+            <li><a href="financial-reports.html">Financial Reports</a></li>
+            <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
+          </ul>
+        </li>
+        <!-- NEWS DROPDOWN REMOVED -->
+        <li class="nav-item-dropdown">
+          <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="campaigns.html">Fundraising Campaigns</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="donate.html" class="btn btn-primary btn-sm" data-track="donate">Donate Now</a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE NAV ══ -->
+  <div class="nav-overlay"></div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36">
+        <div class="nav-logo-text"><strong>ACSS</strong></div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+    </div>
+    
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-about">About <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-about">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#mission">Mission &amp; Vision</a>
+          <a href="founder.html">Founder</a>
+          <a href="leadership.html">Leadership Team</a>
+          <a href="governance.html">Governance</a>
+          <a href="policies.html">Policies &amp; Safeguarding</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-programs">
+          <a href="child-protection.html">Child Protection</a>
+          <a href="education.html">Education</a>
+          <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
+          <a href="nutrition.html">Nutrition &amp; Food Security</a>
+          <a href="reintegration.html">Family Reintegration</a>
+          <a href="emergency-response.html">Emergency Response</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle open" data-target="mobile-impact">Impact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu open" id="mobile-impact">
+          <a href="impact.html" class="active">Impact Overview</a>
+          <a href="success-stories.html">Success Stories</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="impact-map.html">Impact Map</a>
+          <a href="annual-reports.html">Annual Reports</a>
+          <a href="financial-reports.html">Financial Reports</a>
+          <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
+        </div>
+      </div>
+      <!-- NEWS DROPDOWN REMOVED -->
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-involved">
+          <a href="donate.html">Donate</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="partners.html">Partner With Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="campaigns.html">Fundraising Campaigns</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO - CENTERED -->
+    <section class="page-hero beige-after" aria-label="Our Impact">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span aria-current="page">Impact</span>
+        </nav>
+        <span class="section-tag white">Impact Report</span>
+        <h1>Transparency is<br>Our Strongest Currency</h1>
+        <p class="lead">Every number below represents a child whose life has changed. We publish full financial statements, outcome data, and program results — because you deserve to see exactly what your trust makes possible.</p>
+      </div>
+    </section>
+
+    <!-- ══ HEADLINE NUMBERS ═══════════════════════════════════ -->
+    <div class="impact-hero-numbers" aria-label="Key impact statistics">
+      <div class="container">
+        <div class="impact-hero-grid">
+          <div class="impact-hero-item" data-reveal>
+            <span class="big-num" data-count="0">0</span>
+            <p>Children Reached</p>
+          </div>
+          <div class="impact-hero-item" data-reveal data-delay="80">
+            <span class="big-num green" data-count="0">0</span>
+            <p>Back in School</p>
+          </div>
+          <div class="impact-hero-item" data-reveal data-delay="160">
+            <span class="big-num gold" data-count="0">0</span>
+            <p>Families Reunited</p>
+          </div>
+          <div class="impact-hero-item" data-reveal data-delay="240">
+            <span class="big-num" data-count="0">0</span>
+            <p>Counseling Sessions</p>
+          </div>
+          <div class="impact-hero-item" data-reveal data-delay="320">
+            <span class="big-num green" data-count="0">0</span>
+            <p>% Funds to Programs</p>
+          </div>
+          <div class="impact-hero-item" data-reveal data-delay="400">
+            <span class="big-num gold" data-count="0">0</span>
+            <p>Field Offices</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ FINANCIAL BREAKDOWN ════════════════════════════════ -->
+    <section class="finance-section" aria-labelledby="finance-heading">
+      <div class="container">
+        <div class="section-header center" style="margin-bottom:3rem;" data-reveal>
+          <span class="section-tag">Financial Transparency</span>
+          <h2 id="finance-heading">Where Every Dollar Goes</h2>
+          <p>We are committed to radical transparency. Every dollar you donate is deployed directly for children in South Sudan.</p>
+        </div>
+
+        <div class="donut-layout">
+          <div data-reveal>
+            <div class="donut-chart" role="img" aria-label="Pie chart: programs, admin, fundraising">
+              <svg width="260" height="260" viewBox="0 0 260 260">
+                <circle cx="130" cy="130" r="92" fill="none" stroke="var(--green)" stroke-width="36"
+                  stroke-dasharray="578 0" stroke-dashoffset="0"/>
+                <circle cx="130" cy="130" r="92" fill="none" stroke="var(--blue)" stroke-width="36"
+                  stroke-dasharray="11.6 566.4" stroke-dashoffset="-562"/>
+                <circle cx="130" cy="130" r="92" fill="none" stroke="var(--gold)" stroke-width="36"
+                  stroke-dasharray="5.8 572.2" stroke-dashoffset="-573"/>
+              </svg>
+              <div class="donut-center">
+                <strong>0%</strong>
+                <span>to programs</span>
+              </div>
+            </div>
+          </div>
+
+          <div data-reveal data-delay="200">
+            <h3 style="margin-bottom:1.25rem;font-size:1.2rem;">Fund Allocation</h3>
+            <div class="finance-legend">
+              <div class="finance-legend-item">
+                <div class="legend-dot" style="background:var(--green);"></div>
+                <div class="legend-info">
+                  <strong>Program Delivery</strong>
+                  <span>Child protection, education, mental health, nutrition, reintegration</span>
+                </div>
+                <span class="legend-pct" style="color:var(--green);">0%</span>
+              </div>
+              <div class="finance-legend-item">
+                <div class="legend-dot" style="background:var(--blue);"></div>
+                <div class="legend-info">
+                  <strong>Administration</strong>
+                  <span>HR, legal, compliance, and governance</span>
+                </div>
+                <span class="legend-pct" style="color:var(--blue);">0%</span>
+              </div>
+              <div class="finance-legend-item">
+                <div class="legend-dot" style="background:var(--gold);"></div>
+                <div class="legend-info">
+                  <strong>Fundraising</strong>
+                  <span>Donor communications and stewardship</span>
+                </div>
+                <span class="legend-pct" style="color:var(--gold-dark);">0%</span>
+              </div>
+            </div>
+            <p style="font-size:.82rem;color:var(--text-tertiary);margin-top:1rem;">
+              Figures based on audited financial statements. Full statements available for download below.
+            </p>
+            <a href="#downloads" class="btn btn-outline-blue btn-sm" style="margin-top:0.75rem;">Download Full Statements</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROGRAM BREAKDOWN ══════════════════════════════════ -->
+    <section class="program-breakdown" aria-labelledby="breakdown-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag">Program Allocation</span>
+          <h2 id="breakdown-heading">Spending Across Our Programs</h2>
+          <p>Program funds are allocated based on need assessment, population data, and strategic priorities.</p>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <div class="breakdown-row" data-reveal>
+            <span class="breakdown-label">CP</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="0%" style="background:var(--blue);"></div></div>
+            </div>
+            <span class="breakdown-pct">0%</span>
+          </div>
+          <div class="breakdown-row" data-reveal data-delay="100">
+            <span class="breakdown-label">ED</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="0%" style="background:var(--green);"></div></div>
+            </div>
+            <span class="breakdown-pct" style="color:var(--green);">0%</span>
+          </div>
+          <div class="breakdown-row" data-reveal data-delay="200">
+            <span class="breakdown-label">MH</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="0%" style="background:var(--gold-dark);"></div></div>
+            </div>
+            <span class="breakdown-pct" style="color:var(--gold-dark);">0%</span>
+          </div>
+          <div class="breakdown-row" data-reveal data-delay="300">
+            <span class="breakdown-label">NU</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="0%" style="background:var(--green-dark);"></div></div>
+            </div>
+            <span class="breakdown-pct" style="color:var(--green-dark);">0%</span>
+          </div>
+          <div class="breakdown-row" data-reveal data-delay="400">
+            <span class="breakdown-label">RI</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="0%" style="background:var(--blue-dark);"></div></div>
+            </div>
+            <span class="breakdown-pct" style="color:var(--blue-dark);">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ OUTCOMES TABLE ═════════════════════════════════════ -->
+    <section class="outcomes-section" aria-labelledby="outcomes-heading">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:2rem;" data-reveal>
+          <span class="section-tag">Outcomes Data</span>
+          <h2 id="outcomes-heading">Program Outcomes</h2>
+        </div>
+        <div style="overflow-x:auto;" data-reveal>
+          <table class="outcomes-table" aria-label="Program outcomes">
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>2024 Actual</th>
+                <th>2025 Target</th>
+                <th>2025 Actual</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Children reached (all programs)</strong></td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>0</strong></td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Children in safe houses</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Students enrolled in ALCs</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>ALC completion rate</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Counseling sessions delivered</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Children showing improved wellbeing</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Families reunited</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Reunifications stable at 12 months</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>Youth vocational training graduates</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+              <tr>
+                <td>% of donations to programs</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td><span class="trend-up">-</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ YEAR-OVER-YEAR CHART ════════════════════════════════ -->
+    <section class="section" aria-labelledby="growth-heading">
+      <div class="container">
+        <div class="section-header center" style="margin-bottom:2.5rem;" data-reveal>
+          <span class="section-tag">Year Over Year</span>
+          <h2 id="growth-heading">Growth Since Founding</h2>
+          <p>Consistent, mission-driven growth — expanding reach without compromising quality.</p>
+        </div>
+        <div style="background:var(--gray-50);border-radius:var(--radius-xl,24px);padding:2.5rem;max-width:800px;margin:0 auto;" data-reveal>
+          <div style="display:flex;align-items:flex-end;gap:1.25rem;height:180px;margin-bottom:1rem;">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--text-tertiary);">0</span>
+              <div style="width:100%;background:var(--blue);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:700;">2020</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--text-tertiary);">0</span>
+              <div style="width:100%;background:var(--blue);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:700;">2021</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--text-tertiary);">0</span>
+              <div style="width:100%;background:var(--blue);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:700;">2022</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--text-tertiary);">0</span>
+              <div style="width:100%;background:var(--blue);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:700;">2023</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--text-tertiary);">0</span>
+              <div style="width:100%;background:var(--blue);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:700;">2024</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+              <span style="font-size:.7rem;color:var(--green);font-weight:700;">0</span>
+              <div style="width:100%;background:var(--green);border-radius:4px 4px 0 0;height:0%;"></div>
+              <span style="font-size:.7rem;font-weight:800;color:var(--green);">2025</span>
+            </div>
+          </div>
+          <p style="text-align:center;font-size:.8rem;color:var(--text-tertiary);">Total children reached per year</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DOWNLOADS ══════════════════════════════════════════ -->
+    <section class="downloads-section" id="downloads" aria-labelledby="downloads-heading">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:2rem;" data-reveal>
+          <span class="section-tag">Documents</span>
+          <h2 id="downloads-heading">Reports &amp; Financial Statements</h2>
+          <p>All our reports are publicly available. Transparency builds trust — and trust builds impact.</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <a href="assets/docs/ACSS-Annual-Report-2025.pdf" class="download-card" data-reveal target="_blank" rel="noopener">
+              <div class="download-icon">PDF</div>
+              <div class="download-info">
+                <strong>2025 Annual Report</strong>
+                <span>Full program outcomes, impact stories, and organizational highlights</span>
+                <p class="download-meta">PDF · Coming Soon</p>
+              </div>
+              <span style="color:var(--blue);font-size:1.2rem;flex-shrink:0;">↓</span>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="assets/docs/ACSS-Financial-Statements-2025.pdf" class="download-card" data-reveal data-delay="100" target="_blank" rel="noopener">
+              <div class="download-icon">AUD</div>
+              <div class="download-info">
+                <strong>2025 Audited Financial Statements</strong>
+                <span>Independent audit, full income/expenditure statements</span>
+                <p class="download-meta">PDF · Coming Soon</p>
+              </div>
+              <span style="color:var(--blue);font-size:1.2rem;flex-shrink:0;">↓</span>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="assets/docs/ACSS-Impact-Report-2025.pdf" class="download-card" data-reveal target="_blank" rel="noopener">
+              <div class="download-icon">IMP</div>
+              <div class="download-info">
+                <strong>2025 Program Impact Report</strong>
+                <span>Detailed outcomes data for all program areas with case studies</span>
+                <p class="download-meta">PDF · Coming Soon</p>
+              </div>
+              <span style="color:var(--blue);font-size:1.2rem;flex-shrink:0;">↓</span>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="assets/docs/ACSS-Strategic-Plan-2026.pdf" class="download-card" data-reveal data-delay="100" target="_blank" rel="noopener">
+              <div class="download-icon">PLN</div>
+              <div class="download-info">
+                <strong>2026 Strategic Plan</strong>
+                <span>Three-year roadmap for expanding reach, deepening impact, and organizational growth</span>
+                <p class="download-meta">PDF · Coming Soon</p>
+              </div>
+              <span style="color:var(--blue);font-size:1.2rem;flex-shrink:0;">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <p style="margin-top:1.5rem;font-size:.82rem;color:var(--text-tertiary);text-align:center;" data-reveal>
+          Place report PDF files in <code>assets/docs/</code> folder and update the href links above accordingly.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ RECOGNITION ════════════════════════════════════════ -->
+    <section class="recognition-section" aria-labelledby="recognition-heading">
+      <div class="container">
+        <div class="section-header center" style="margin-bottom:0;" data-reveal>
+          <span class="section-tag white">Recognition</span>
+          <h2 id="recognition-heading" style="color:#fff;">Awards &amp; Recognition</h2>
+        </div>
+        <div class="recognition-grid">
+          <div class="recognition-card" data-reveal>
+            <span class="award-icon">🏆</span>
+            <h4>[Award Name]</h4>
+            <p>Recognized for excellence in child protection programming in conflict-affected contexts.</p>
+            <span class="year">[Year]</span>
+          </div>
+          <div class="recognition-card" data-reveal data-delay="100">
+            <span class="award-icon">⭐</span>
+            <h4>[Award Name]</h4>
+            <p>Named among the top humanitarian organizations for financial transparency and accountability.</p>
+            <span class="year">[Year]</span>
+          </div>
+          <div class="recognition-card" data-reveal data-delay="200">
+            <span class="award-icon">🌍</span>
+            <h4>[Award Name]</h4>
+            <p>Featured by [International Body] as a model for community-led reintegration in post-conflict settings.</p>
+            <span class="year">[Year]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ════════════════════════════════════════════════ -->
+    <section style="background:var(--gray-50);padding:64px 0;text-align:center;" aria-labelledby="impact-cta">
+      <div class="container">
+        <span class="section-tag" data-reveal>Keep the Impact Growing</span>
+        <h2 id="impact-cta" style="margin:.5rem auto 1rem;max-width:560px;" data-reveal>You Make These Numbers Possible</h2>
+        <p style="max-width:500px;margin:0 auto 1.5rem;" data-reveal>Every child in our reports was helped because someone like you chose to give. Your support makes the difference.</p>
+        <div class="btn-group" style="justify-content:center;" data-reveal>
+          <a href="donate.html" class="btn btn-blue btn-lg">Donate Now</a>
+          <a href="get-involved.html" class="btn btn-outline-blue btn-lg">Other Ways to Help</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
+          <p style="margin-top:1rem;">Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="#" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About ACSS</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+            <li><a href="impact.html">Impact &amp; Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get stories, updates, and impact reports from South Sudan.</p>
+          <form class="footer-newsletter-form" aria-label="Newsletter signup">
+            <input type="email" placeholder="Your email" aria-label="Email address" required>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Abandoned Child South Sudan (ACSS). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="safeguarding.html">Safeguarding</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="donor-privacy.html">Donor Privacy</a>
+          <a href="board.html">Board</a>
+          <a href="financials.html">Financials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="cookie-banner"><div class="cookie-inner"><p>We use cookies. See our <a href="cookie-policy.html">Cookie Policy</a>.</p><div class="cookie-actions"><button class="btn btn-sm cookie-decline" style="color:rgba(255,255,255,.6);padding:.4rem 0.8rem;">Decline</button><button class="btn btn-primary btn-sm cookie-accept">Accept</button></div></div></div>
+  <div class="toast-container" aria-live="polite"></div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

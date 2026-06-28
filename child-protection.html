@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACSS Child Protection Program — Protecting children from violence, abuse, and exploitation in South Sudan.">
+  <meta property="og:title" content="Child Protection — ACSS">
+  <meta property="og:image" content="assets/images/programs/child-protection.jpg">
+  <title>Child Protection — ACSS South Sudan</title>
+  
+  <!-- Favicon - Complete Set with Versioning -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/favicon-96x96.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=2">
+  <link rel="icon" href="assets/logo/favicon.ico?v=2" type="image/x-icon">
+  <link rel="manifest" href="assets/logo/site.webmanifest?v=2">
+  <meta name="apple-mobile-web-app-title" content="ACSS">
+  <meta name="application-name" content="ACSS">
+  <meta name="msapplication-TileColor" content="#0A4D8C">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    .program-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .program-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .program-hero h1 { color: var(--white); }
+    .program-hero .lead { color: rgba(255,255,255,0.85); }
+
+    .program-details { padding: 80px 0; }
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .program-content h2 { margin-bottom: 1rem; }
+    .program-content p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .program-content ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+    .program-content ul li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+
+    .program-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
+    .stat-box {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+    }
+    .stat-box .number {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--blue);
+      display: block;
+    }
+    .stat-box .label { font-size: 0.85rem; color: var(--text-tertiary); }
+
+    .program-image {
+      position: sticky;
+      top: 100px;
+    }
+    .program-image img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .program-image .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
+    }
+    .program-image .img-placeholder .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .services-section { background: var(--gray-50); padding: 64px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-card .icon { 
+      font-size: 0.75rem; 
+      font-weight: 700;
+      margin-bottom: 0.75rem; 
+      display: block; 
+      letter-spacing: 0.05em;
+      color: var(--blue);
+    }
+    .service-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
+
+    .impact-stories { padding: 64px 0; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .story-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .story-card .story-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: var(--gray-100);
+    }
+    .story-card .img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
+    }
+    .story-card-body { padding: 1.5rem; }
+    .story-card-body h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .story-card-body p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 139, 87, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.gold {
+      color: var(--gold-dark);
+      background: rgba(244, 180, 0, 0.08);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    .btn-outline-blue:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ── IMAGE PLACEHOLDER ── */
+    .img-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
+      border-radius: var(--radius-md);
+      min-height: 150px;
+    }
+    .img-placeholder .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+    .img-placeholder .placeholder-text {
+      text-align: center;
+      padding: 0 0.6rem;
+    }
+
+    @media (max-width: 1024px) {
+      .program-grid { grid-template-columns: 1fr; }
+      .program-image { position: static; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .program-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>Helsinki, Finland</span>
+        <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+358452785499">+358 45 278 5499</a>
+        <div class="lang-switch">
+          <a href="#" data-lang="en" class="active">EN</a>
+          <a href="#" data-lang="ar">عر</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html"><img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48"><div class="nav-logo-text"><strong>ACSS</strong><span>Abandoned Child South Sudan</span></div></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link-dropdown">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="programs.html" class="nav-link-dropdown active">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="child-protection.html" class="active">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="impact.html" class="nav-link-dropdown">Impact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="impact.html">Impact Overview</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+            <li><a href="impact-map.html">Impact Map</a></li>
+            <li><a href="annual-reports.html">Annual Reports</a></li>
+            <li><a href="financial-reports.html">Financial Reports</a></li>
+            <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
+          </ul>
+        </li>
+        <!-- NEWS DROPDOWN REMOVED -->
+        <li class="nav-item-dropdown">
+          <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="campaigns.html">Fundraising Campaigns</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="donate.html" class="btn btn-primary btn-sm">Donate Now</a></div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-overlay"></div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36"><div class="nav-logo-text"><strong>ACSS</strong></div></a><button class="mobile-nav-close" aria-label="Close menu">✕</button></div>
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-about">About <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-about">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#mission">Mission &amp; Vision</a>
+          <a href="founder.html">Founder</a>
+          <a href="leadership.html">Leadership Team</a>
+          <a href="governance.html">Governance</a>
+          <a href="policies.html">Policies &amp; Safeguarding</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle open" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
+        <div class="mobile-submenu open" id="mobile-programs">
+          <a href="child-protection.html" class="active">Child Protection</a>
+          <a href="education.html">Education</a>
+          <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
+          <a href="nutrition.html">Nutrition &amp; Food Security</a>
+          <a href="reintegration.html">Family Reintegration</a>
+          <a href="emergency-response.html">Emergency Response</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-impact">Impact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-impact">
+          <a href="impact.html">Impact Overview</a>
+          <a href="success-stories.html">Success Stories</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="impact-map.html">Impact Map</a>
+          <a href="annual-reports.html">Annual Reports</a>
+          <a href="financial-reports.html">Financial Reports</a>
+          <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
+        </div>
+      </div>
+      <!-- NEWS DROPDOWN REMOVED -->
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-involved">
+          <a href="donate.html">Donate</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="partners.html">Partner With Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="campaigns.html">Fundraising Campaigns</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+    <div class="mobile-nav-footer"><a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a></div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="program-hero" aria-label="Child Protection Program">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="programs.html">Programs</a>
+          <span class="breadcrumb-sep">›</span>
+          <span aria-current="page">Child Protection</span>
+        </nav>
+        <span class="section-tag white">Program 01</span>
+        <h1>Child Protection</h1>
+        <p class="lead">Every child has the right to live free from violence, exploitation, and abuse. Our child protection program is the frontline response to that right.</p>
+      </div>
+    </section>
+
+    <section class="program-details" aria-labelledby="program-heading">
+      <div class="container">
+        <div class="program-grid">
+          <div class="program-content">
+            <h2 id="program-heading">Protecting Children at Risk</h2>
+            <p>In South Sudan's conflict zones, children face separation from families, abduction by armed groups, gender-based violence, and statelessness. Our child protection teams work 24/7 to identify, rescue, and provide immediate care to children at risk.</p>
+
+            <div class="program-stats">
+              <div class="stat-box">
+                <span class="number" data-count="50">0</span>
+                <span class="label">Children Protected</span>
+              </div>
+              <div class="stat-box">
+                <span class="number" data-count="5">0</span>
+                <span class="label">Safe Houses</span>
+              </div>
+              <div class="stat-box">
+                <span class="number" data-count="24">0</span>
+                <span class="label">Hour Response Time</span>
+              </div>
+            </div>
+
+            <h3>What We Do</h3>
+            <ul>
+              <li>Identify and rescue children from abusive situations</li>
+              <li>Provide emergency shelter and care in safe houses</li>
+              <li>Offer legal aid and birth registration services</li>
+              <li>Support family tracing and reunification</li>
+              <li>Train communities on child protection and awareness</li>
+            </ul>
+
+            <a href="donate.html?program=protection" class="btn btn-blue">Support This Program</a>
+          </div>
+
+          <div class="program-image">
+            <img src="assets/images/programs/child-protection.jpg" alt="Child Protection Program - ACSS South Sudan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;">
+              <span class="placeholder-icon">🛡️</span>
+              <span class="placeholder-text">assets/images/programs/child-protection.jpg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag">Services</span>
+          <h2 id="services-heading">Our Child Protection Services</h2>
+          <p>Comprehensive protection for every child in need.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-reveal>
+            <span class="icon">SAFE</span>
+            <h4>Safe Houses & Emergency Shelters</h4>
+            <p>Secure, staffed emergency shelters providing immediate refuge for children in crisis, operating across 8 locations in South Sudan.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="100">
+            <span class="icon">LEGAL</span>
+            <h4>Legal Aid & Documentation</h4>
+            <p>Birth registration, legal identity documentation, and advocacy for children's rights within South Sudan's legal system.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="200">
+            <span class="icon">RAPID</span>
+            <h4>Emergency Response Teams</h4>
+            <p>Rapid response units deployed within 24 hours of a reported child protection incident, including mobile case management teams.</p>
+          </div>
+          <div class="service-card" data-reveal>
+            <span class="icon">CASE</span>
+            <h4>Case Management</h4>
+            <p>Individual case plans for every child, with dedicated social workers ensuring continuity of care from crisis to recovery.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="100">
+            <span class="icon">FAMILY</span>
+            <h4>Family Tracing & Reunification</h4>
+            <p>Locating and reuniting children with their families, including cross-border tracing and community mediation.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="200">
+            <span class="icon">AWARE</span>
+            <h4>Community Awareness</h4>
+            <p>Training communities to recognize and report child protection concerns, creating safer environments for children.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-stories" aria-labelledby="stories-heading">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag gold">Stories</span>
+          <h2 id="stories-heading">Real Impact, Real Children</h2>
+          <p>Behind every statistic is a child whose life has been transformed.</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-card" data-reveal>
+            <img src="assets/images/stories/amara-story.jpg" alt="Amara's story" class="story-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📖</span>
+              <span class="placeholder-text">amara-story.jpg</span>
+            </div>
+            <div class="story-card-body">
+              <h4>Amara's Second Chance</h4>
+              <p>At 9, Amara fled her village during a raid and arrived at our center alone and terrified. Today, she leads her class and dreams of becoming a doctor.</p>
+              <a href="success-stories.html" class="btn btn-outline-blue btn-sm" style="margin-top:0.75rem;">Read More</a>
+            </div>
+          </div>
+          <div class="story-card" data-reveal data-delay="100">
+            <img src="assets/images/stories/emmanuel-story.jpg" alt="Emmanuel's story" class="story-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📖</span>
+              <span class="placeholder-text">emmanuel-story.jpg</span>
+            </div>
+            <div class="story-card-body">
+              <h4>Emmanuel's Road to Peace</h4>
+              <p>A former child soldier, Emmanuel entered our program filled with anger and fear. Art therapy gave him a language for his pain that words couldn't.</p>
+              <a href="success-stories.html" class="btn btn-outline-blue btn-sm" style="margin-top:0.75rem;">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
+          <p>Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About ACSS</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+            <li><a href="impact.html">Impact &amp; Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get stories, updates, and impact reports from South Sudan.</p>
+          <form class="footer-newsletter-form" aria-label="Newsletter signup">
+            <input type="email" placeholder="Your email" aria-label="Email address" required>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Abandoned Child South Sudan (ACSS). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="safeguarding.html">Safeguarding</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="donor-privacy.html">Donor Privacy</a>
+          <a href="board.html">Board</a>
+          <a href="financials.html">Financials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <div class="cookie-banner"><div class="cookie-inner"><p>We use cookies. See our <a href="cookie-policy.html">Cookie Policy</a>.</p><div class="cookie-actions"><button class="btn btn-sm cookie-decline" style="color:rgba(255,255,255,.6);padding:.4rem 0.8rem;">Decline</button><button class="btn btn-primary btn-sm cookie-accept">Accept</button></div></div></div>
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Animate stats on scroll
+    const statNumbers = document.querySelectorAll('.stat-box .number');
+    let statsAnimated = false;
+
+    function animateStats() {
+      if (statsAnimated) return;
+      const windowHeight = window.innerHeight;
+      statNumbers.forEach(stat => {
+        const rect = stat.getBoundingClientRect();
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const target = parseInt(stat.getAttribute('data-count'));
+          let current = 0;
+          const increment = target / 50;
+          const updateStat = () => {
+            current += increment;
+            if (current < target) {
+              stat.textContent = Math.ceil(current);
+              setTimeout(updateStat, 20);
+            } else {
+              stat.textContent = target.toLocaleString();
+            }
+          };
+          updateStat();
+          statsAnimated = true;
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateStats);
+    setTimeout(animateStats, 500);
+  </script>
+</body>
+</html>
