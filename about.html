@@ -33,13 +33,16 @@
   <style>
     /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
     :root {
-      --blue: #1a5276;
-      --blue-dark: #0e3a54;
-      --blue-light: #2a7ba8;
-      --green: #2E8B57;
-      --green-dark: #1f6340;
-      --gold: #F4B400;
-      --gold-dark: #c99200;
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
       --gray-50: #F8F9FA;
       --gray-100: #F1F3F5;
       --gray-200: #E9ECEF;
@@ -47,9 +50,9 @@
       --text-primary: #1A1A2E;
       --text-secondary: #3d3d56;
       --text-tertiary: #6C757D;
-      --shadow-sm: 0 2px 6px rgba(26, 82, 118, 0.06);
-      --shadow-md: 0 8px 20px rgba(26, 82, 118, 0.10);
-      --shadow-lg: 0 16px 40px rgba(26, 82, 118, 0.12);
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
@@ -106,9 +109,13 @@
       object-fit: cover;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
       border: 4px solid #fff;
+      max-width: 280px;
+      margin: 0 auto;
     }
     .founder-sticky-side .img-placeholder {
       width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
       aspect-ratio: 1/1;
       border-radius: 50%;
       display: flex;
@@ -133,7 +140,7 @@
     .pull-quote {
       border-left: 4px solid var(--gold);
       padding: 1rem 1.5rem;
-      background: rgba(244,180,0,.06);
+      background: rgba(212, 160, 23, 0.06);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       margin: 1.5rem 0;
       font-size: 1.1rem;
@@ -147,7 +154,7 @@
     .team-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
       margin-top: 2.5rem;
     }
     .team-card {
@@ -158,51 +165,84 @@
       transition: all 0.25s ease;
       height: 100%;
       text-align: center;
+      padding-bottom: 0.5rem;
     }
     .team-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
-    /* ── TEAM PHOTOS - CIRCULAR ── */
+    /* ── TEAM PHOTOS - CIRCULAR & SMALLER ── */
     .team-card-img {
-      width: 100%;
+      width: 80%;
       aspect-ratio: 1/1;
       object-fit: cover;
       border-radius: 50%;
       transition: transform 0.3s ease;
-      padding: 0.5rem;
+      margin: 0.75rem auto 0.25rem;
+      display: block;
+      border: 3px solid var(--gray-200);
     }
     .team-card:hover .team-card-img {
       transform: scale(1.05);
+      border-color: var(--blue);
     }
     .team-card-img-placeholder {
-      width: 100%;
+      width: 80%;
       aspect-ratio: 1/1;
       border-radius: 50%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: var(--gray-200);
+      background: var(--gray-100);
       color: var(--text-tertiary);
-      font-size: 0.8rem;
-      border: 2px dashed var(--gray-300);
-      margin: 0.5rem;
+      margin: 0.75rem auto 0.25rem;
+      border: 3px solid var(--gray-300);
+      transition: all 0.3s ease;
+      padding: 0.5rem;
+    }
+    .team-card:hover .team-card-img-placeholder {
+      border-color: var(--blue);
+      background: rgba(12, 74, 110, 0.04);
+    }
+    .team-card-img-placeholder .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .team-card-img-placeholder .placeholder-text {
+      font-size: 0.55rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .team-card-img-placeholder .placeholder-path {
+      font-size: 0.5rem;
+      color: var(--text-tertiary);
+      background: var(--gray-200);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      margin-top: 0.2rem;
+      font-family: monospace;
+      word-break: break-all;
     }
     .team-card-body {
-      padding: 1.25rem;
+      padding: 0.5rem 1rem 1rem;
       text-align: center;
     }
-    .team-card-body h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .team-card-body h4 { font-size: 0.95rem; margin-bottom: 0.15rem; }
     .team-card-body .role {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--green);
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .team-card-body p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-secondary);
       margin: 0;
+      line-height: 1.4;
     }
 
     /* ── TIMELINE ── */
@@ -300,7 +340,7 @@
     .governance-links a:hover {
       border-color: var(--blue);
       color: var(--blue);
-      background: rgba(26,82,118,.04);
+      background: rgba(12, 74, 110, .04);
     }
 
     /* ── PARTNER LOGOS ── */
@@ -327,7 +367,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--green);
-      background: rgba(46, 139, 87, 0.08);
+      background: rgba(30, 122, 74, 0.08);
       padding: 0.25rem 0.9rem;
       border-radius: 100px;
       margin-bottom: 0.75rem;
@@ -338,11 +378,11 @@
     }
     .section-tag.blue {
       color: var(--blue);
-      background: rgba(26, 82, 118, 0.08);
+      background: rgba(12, 74, 110, 0.08);
     }
     .section-tag.gold {
       color: var(--gold-dark);
-      background: rgba(244, 180, 0, 0.08);
+      background: rgba(212, 160, 23, 0.08);
     }
     .section-header {
       max-width: 620px;
@@ -442,10 +482,12 @@
       .founder-deep-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .founder-sticky-side { position: static; }
       .section { padding: 48px 0; }
+      .team-card-img { width: 60%; }
     }
     @media (max-width: 480px) { 
       .values-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr; }
+      .team-card-img { width: 50%; }
     }
 
     /* ── PAGE HERO ── */
@@ -518,7 +560,7 @@
     }
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--green), #3aad6c);
+      background: linear-gradient(90deg, var(--green), #2E9B62);
       border-radius: 100px;
       transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -537,11 +579,11 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <span>Helsinki, Finland</span>
+        <span>Juba, Central Equatoria, South Sudan</span>
         <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
       </div>
       <div class="top-bar-right">
-        <a href="tel:+358452785499">+358 45 278 5499</a>
+        <a href="tel:+211912345678">+211 912 345 678</a>
         <div class="lang-switch">
           <a href="#" data-lang="en" class="active">EN</a>
           <a href="#" data-lang="ar">عر</a>
@@ -735,25 +777,25 @@
               <h3 style="margin-bottom:1.25rem;font-size:1.1rem;">By the Numbers — 2025</h3>
               <div class="row g-3">
                 <div class="col-6 text-center">
-                  <span class="impact-number" data-count="10">0</span>
+                  <span class="impact-number" data-count="0">0</span>
                   <p style="font-size:.8rem;margin-top:.25rem;">Children reached</p>
                 </div>
                 <div class="col-6 text-center">
-                  <span class="impact-number green" data-count="5">0</span>
+                  <span class="impact-number green" data-count="0">0</span>
                   <p style="font-size:.8rem;margin-top:.25rem;">Field offices</p>
                 </div>
                 <div class="col-6 text-center">
-                  <span class="impact-number gold" data-count="97">0</span>
+                  <span class="impact-number gold" data-count="0">0</span>
                   <p style="font-size:.8rem;margin-top:.25rem;">% funds to programs</p>
                 </div>
                 <div class="col-6 text-center">
-                  <span class="impact-number" data-count="10">0</span>
+                  <span class="impact-number" data-count="0">0</span>
                   <p style="font-size:.8rem;margin-top:.25rem;">Staff &amp; volunteers</p>
                 </div>
               </div>
               <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--gray-200);">
-                <div class="progress-bar" style="margin-bottom:.5rem;"><div class="progress-fill" data-width="97%" style="background:linear-gradient(90deg,var(--green),#3aad6c);"></div></div>
-                <p style="font-size:.75rem;text-align:right;color:var(--text-tertiary);">97% of donations go directly to programs</p>
+                <div class="progress-bar" style="margin-bottom:.5rem;"><div class="progress-fill" data-width="0%" style="background:linear-gradient(90deg,var(--green),#2E9B62);"></div></div>
+                <p style="font-size:.75rem;text-align:right;color:var(--text-tertiary);">0% of donations go directly to programs</p>
               </div>
             </div>
           </div>
@@ -814,7 +856,7 @@
           <div class="founder-sticky-side" data-reveal>
             <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu - Founder of ACSS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="img-placeholder" style="display:none;">
-              <span>Upload: assets/images/team/founder-portrait.jpg</span>
+              <span>📸 Upload: assets/images/team/founder-portrait.jpg</span>
             </div>
             <div style="background:#fff;border-radius:var(--radius-md,10px);padding:1.25rem;box-shadow:var(--shadow-sm);margin-top:1.25rem;">
               <strong style="display:block;font-family:'Poppins',sans-serif;color:var(--blue);font-size:1rem;">Gatkuoth Liah Diu</strong>
@@ -855,7 +897,7 @@
               Gatkuoth established Abandoned Child South Sudan with a single safe house, three staff members, and the fierce conviction that every child deserved better than survival. He brought not just compassion to the work — but intimate, first-hand understanding of what these children needed.
             </p>
             <p>
-              Today, ACSS operates 8 field offices across South Sudan, has helped over 12,500 children, and is recognized as a leading child protection organization in the region. But Gatkuoth is quick to measure success differently.
+              Today, ACSS operates 0 field offices across South Sudan, has helped 0 children, and is recognized as a leading child protection organization in the region. But Gatkuoth is quick to measure success differently.
             </p>
 
             <div class="pull-quote">
@@ -886,7 +928,7 @@
             <div class="timeline-content">
               <p class="timeline-year">2024</p>
               <h4>ACSS Founded</h4>
-              <p>First safe house opened in Juba with 3 staff members and 12 children. The mission was clear from day one.</p>
+              <p>First safe house opened in Juba with 0 staff members and 0 children. The mission was clear from day one.</p>
             </div>
           </div>
           <div class="timeline-item" data-reveal data-delay="100">
@@ -894,7 +936,7 @@
             <div class="timeline-content">
               <p class="timeline-year">2024</p>
               <h4>First Education Program Launched</h4>
-              <p>Accelerated Learning Center opens, reaching 150 out-of-school children in the first year.</p>
+              <p>Accelerated Learning Center opens, reaching 0 out-of-school children in the first year.</p>
             </div>
           </div>
           <div class="timeline-item" data-reveal data-delay="200">
@@ -910,15 +952,15 @@
             <div class="timeline-content">
               <p class="timeline-year">2024</p>
               <h4>Nutrition Program Launched</h4>
-              <p>School feeding and malnutrition treatment programs begin, reaching thousands of children with life-saving nutrition.</p>
+              <p>School feeding and malnutrition treatment programs begin, reaching 0 children with life-saving nutrition.</p>
             </div>
           </div>
           <div class="timeline-item" data-reveal data-delay="400">
             <div class="timeline-marker">5</div>
             <div class="timeline-content">
               <p class="timeline-year">2024</p>
-              <h4>100+ Children and Growing</h4>
-              <p>ACSS now operates 5 field offices, employs 20 staff and volunteers, and continues to expand its reach.</p>
+              <h4>0+ Children and Growing</h4>
+              <p>ACSS now operates 0 field offices, employs 0 staff and volunteers, and continues to expand its reach.</p>
             </div>
           </div>
         </div>
@@ -939,7 +981,9 @@
           <div class="team-card" data-reveal>
             <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu - Founder" class="team-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="team-card-img-placeholder" style="display:none;">
-              <span>Upload: assets/images/team/founder-portrait.jpg</span>
+              <span class="placeholder-icon">📸</span>
+              <span class="placeholder-text">Upload your image to:</span>
+              <span class="placeholder-path">assets/images/team/founder-portrait.jpg</span>
             </div>
             <div class="team-card-body">
               <h4>Gatkuoth Liah Diu</h4>
@@ -948,39 +992,48 @@
             </div>
           </div>
 
-          <!-- Team Member 2 -->
+          <!-- Team Member 2 — Programs Director -->
           <div class="team-card" data-reveal data-delay="100">
-            <div class="team-card-img-placeholder">
-              <span>Upload: assets/images/team/team-member-2.jpg</span>
+            <img src="assets/images/team/lul-gatwech.jpg" alt="Lul Gatwech - Programs Director" class="team-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-card-img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📸</span>
+              <span class="placeholder-text">Upload your image to:</span>
+              <span class="placeholder-path">assets/images/team/lul-gatwech.jpg</span>
             </div>
             <div class="team-card-body">
-              <h4>[Name]</h4>
+              <h4>Lul Gatwech</h4>
               <p class="role">Programs Director</p>
-              <p>15+ years in humanitarian program management across East Africa. Oversees all ACSS program areas.</p>
+              <p>Led dedicated local aid teams to maximize community impact and relief operations. Oversees all ACSS program areas.</p>
             </div>
           </div>
 
-          <!-- Team Member 3 -->
+          <!-- Team Member 3 — Finance Director -->
           <div class="team-card" data-reveal data-delay="200">
-            <div class="team-card-img-placeholder">
-              <span>Upload: assets/images/team/team-member-3.jpg</span>
+            <img src="assets/images/team/regina-salam.jpg" alt="Regina Salam - Finance Director" class="team-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-card-img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📸</span>
+              <span class="placeholder-text">Upload your image to:</span>
+              <span class="placeholder-path">assets/images/team/regina-salam.jpg</span>
             </div>
             <div class="team-card-body">
-              <h4>[Name]</h4>
-              <p class="role">Head of Child Protection</p>
-              <p>Social worker and child rights advocate with deep roots in South Sudanese communities.</p>
+              <h4>Regina Salam</h4>
+              <p class="role">Finance Director</p>
+              <p>Certified accountant ensuring donations reach children directly through rigorous financial management and transparency.</p>
             </div>
           </div>
 
-          <!-- Team Member 4 -->
+          <!-- Team Member 4 — Head of Child Protection -->
           <div class="team-card" data-reveal data-delay="300">
-            <div class="team-card-img-placeholder">
-              <span>Upload: assets/images/team/team-member-4.jpg</span>
+            <img src="assets/images/team/nyachangkuoth-gatleel.jpg" alt="Nyachangkuoth Gatleel - Head of Child Protection" class="team-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="team-card-img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📸</span>
+              <span class="placeholder-text">Upload your image to:</span>
+              <span class="placeholder-path">assets/images/team/nyachangkuoth-gatleel.jpg</span>
             </div>
             <div class="team-card-body">
-              <h4>[Name]</h4>
-              <p class="role">Chief Financial Officer</p>
-              <p>Certified accountant ensuring 97% of all donations reach children directly through rigorous financial management.</p>
+              <h4>Nyachangkuoth Gatleel</h4>
+              <p class="role">Head of Child Protection</p>
+              <p>Social worker and child rights advocate with deep roots in South Sudanese communities and 2 years of field experience.</p>
             </div>
           </div>
         </div>
