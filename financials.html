@@ -23,6 +23,12 @@
       background: var(--white);
       border-radius: var(--radius-xl);
       border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .financial-stat:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-light);
     }
     .financial-stat .number {
       font-family: var(--font-head);
@@ -41,6 +47,154 @@
       color: var(--text-tertiary);
       margin-top: 0.25rem;
     }
+
+    /* ── DONUT CHART LAYOUT ── */
+    .donut-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .donut-chart {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: 0 auto;
+    }
+    .donut-chart svg { transform: rotate(-90deg); }
+    .donut-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .donut-center strong {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      display: block;
+      line-height: 1;
+    }
+    .donut-center span {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    .finance-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .finance-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 1rem;
+      background: var(--white);
+      border-radius: var(--radius-md, 10px);
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .finance-legend-item:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-sm);
+      transform: translateX(4px);
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .legend-info { flex: 1; }
+    .legend-info strong {
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      display: block;
+      color: var(--text-primary);
+    }
+    .legend-info span {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+    }
+    .legend-pct {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .legend-pct.green { color: var(--green); }
+    .legend-pct.blue { color: var(--blue); }
+    .legend-pct.gold { color: var(--gold-dark); }
+
+    /* ── PROGRAM BREAKDOWN ── */
+    .program-breakdown {
+      max-width: 720px;
+      margin: 2rem auto 0;
+    }
+    .breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .breakdown-row:hover {
+      background: var(--gray-50);
+      padding-left: 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-label {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .breakdown-bar-wrap {
+      flex: 1;
+      min-width: 100px;
+    }
+    .progress-bar {
+      height: 10px;
+      background: var(--gray-200);
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent);
+      border-radius: 100px;
+    }
+    .breakdown-pct {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 700;
+      min-width: 45px;
+      text-align: right;
+      color: var(--text-primary);
+    }
+
     .download-section {
       background: var(--gray-50);
       padding: 64px 0;
@@ -66,70 +220,185 @@
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
     }
-    .download-item .icon {
-      font-size: 2rem;
-      flex-shrink: 0;
+    .download-item .icon { font-size: 2rem; flex-shrink: 0; }
+    .download-item .info { flex: 1; }
+    .download-item .info strong { display: block; font-size: 0.95rem; }
+    .download-item .info span { font-size: 0.8rem; color: var(--text-tertiary); }
+    .download-item .btn { flex-shrink: 0; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
     }
-    .download-item .info {
-      flex: 1;
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
     }
-    .download-item .info strong {
-      display: block;
-      font-size: 0.95rem;
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
     }
-    .download-item .info span {
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
     }
-    .download-item .btn {
-      flex-shrink: 0;
-    }
+
     @media (max-width: 768px) {
-      .financial-summary {
-        grid-template-columns: 1fr 1fr;
-      }
-      .download-grid {
-        grid-template-columns: 1fr;
-      }
+      .financial-summary { grid-template-columns: 1fr 1fr; }
+      .donut-layout { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .breakdown-row { flex-wrap: wrap; gap: 0.5rem; }
+      .breakdown-label { min-width: 100%; }
+      .download-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
-      .financial-summary {
-        grid-template-columns: 1fr;
-      }
+      .financial-summary { grid-template-columns: 1fr; }
+      .donut-chart { width: 200px; height: 200px; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   
+  <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Juba, South Sudan</span><a href="mailto:info@acss.org">info@acss.org</a></div>
-      <div class="top-bar-right"><a href="tel:+211000000000">+211 000 000 000</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
+  <!-- NAVIGATION (UPDATED) -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html"><img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48"><div class="nav-logo-text"><strong>ACSS</strong><span>Abandoned Child South Sudan</span></div></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="stories.html">Stories</a></li><li><a href="news.html">News</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li><li><a href="contact.html">Contact</a></li>
+      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
+        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
+        <div class="nav-logo-text">
+          <strong>ACSS</strong>
+          <span>Abandoned Child South Sudan</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link-dropdown">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="programs.html" class="nav-link-dropdown">Programs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="impact.html" class="nav-link-dropdown active">Impact ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="impact.html">Impact Overview</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+            <li><a href="impact-map.html">Impact Map</a></li>
+            <li><a href="annual-reports.html">Annual Reports</a></li>
+            <li><a href="financial-reports.html" class="active">Financial Reports</a></li>
+            <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
+          </ul>
+        </li>
+        <!-- NEWS DROPDOWN REMOVED -->
+        <li class="nav-item-dropdown">
+          <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="campaigns.html">Fundraising Campaigns</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta"><a href="donate.html" class="btn btn-primary btn-sm">Donate Now</a></div>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <!-- MOBILE NAV -->
   <div class="nav-overlay"></div>
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36"><div class="nav-logo-text"><strong>ACSS</strong></div></a><button class="mobile-nav-close" aria-label="Close menu">✕</button></div>
     <div class="mobile-nav-links">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a>
-      <a href="impact.html">Impact</a><a href="stories.html">Stories</a><a href="news.html">News</a>
-      <a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a>
+      <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-about">About <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-about">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#mission">Mission &amp; Vision</a>
+          <a href="founder.html">Founder</a>
+          <a href="leadership.html">Leadership Team</a>
+          <a href="governance.html">Governance</a>
+          <a href="policies.html">Policies &amp; Safeguarding</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-programs">
+          <a href="child-protection.html">Child Protection</a>
+          <a href="education.html">Education</a>
+          <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
+          <a href="nutrition.html">Nutrition &amp; Food Security</a>
+          <a href="reintegration.html">Family Reintegration</a>
+          <a href="emergency-response.html">Emergency Response</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle open" data-target="mobile-impact">Impact <span class="arrow">▾</span></button>
+        <div class="mobile-submenu open" id="mobile-impact">
+          <a href="impact.html">Impact Overview</a>
+          <a href="success-stories.html">Success Stories</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="impact-map.html">Impact Map</a>
+          <a href="annual-reports.html">Annual Reports</a>
+          <a href="financial-reports.html" class="active">Financial Reports</a>
+          <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
+        </div>
+      </div>
+      <!-- NEWS DROPDOWN REMOVED -->
+      <div class="mobile-nav-item">
+        <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
+        <div class="mobile-submenu" id="mobile-involved">
+          <a href="donate.html">Donate</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="partners.html">Partner With Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="campaigns.html">Fundraising Campaigns</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
     </div>
     <div class="mobile-nav-footer"><a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a></div>
   </nav>
@@ -200,15 +469,15 @@
           </div>
 
           <div data-reveal data-delay="200">
-            <h3 style="margin-bottom:1.5rem;">2025 Fund Allocation</h3>
+            <h3 style="margin-bottom:1.5rem;font-size:1.2rem;">2025 Fund Allocation</h3>
             <div class="finance-legend">
               <div class="finance-legend-item">
                 <div class="legend-dot" style="background:var(--green);"></div>
                 <div class="legend-info">
                   <strong>Program Delivery</strong>
-                  <span>Child protection, education, mental health, reintegration</span>
+                  <span>Child protection, education, mental health, nutrition, reintegration</span>
                 </div>
-                <span class="legend-pct" style="color:var(--green);">97%</span>
+                <span class="legend-pct green">97%</span>
               </div>
               <div class="finance-legend-item">
                 <div class="legend-dot" style="background:var(--blue);"></div>
@@ -216,7 +485,7 @@
                   <strong>Administration</strong>
                   <span>HR, legal, compliance, and governance</span>
                 </div>
-                <span class="legend-pct" style="color:var(--blue);">2%</span>
+                <span class="legend-pct blue">2%</span>
               </div>
               <div class="finance-legend-item">
                 <div class="legend-dot" style="background:var(--gold);"></div>
@@ -224,10 +493,10 @@
                   <strong>Fundraising</strong>
                   <span>Donor communications and stewardship</span>
                 </div>
-                <span class="legend-pct" style="color:var(--gold-dark);">1%</span>
+                <span class="legend-pct gold">1%</span>
               </div>
             </div>
-            <p style="font-size:.85rem;color:var(--text-tertiary);margin-top:1.25rem;">
+            <p style="font-size:.85rem;color:var(--text-tertiary);margin-top:1.25rem;text-align:center;">
               Figures based on audited financial statements for the year ending December 2025.
             </p>
           </div>
@@ -240,38 +509,45 @@
       <div class="container">
         <div class="section-header center" data-reveal>
           <span class="section-tag">Program Spending</span>
-          <h2>How Program Funds Are Allocated</h2>
-          <p>Every program dollar is carefully allocated based on need and impact potential.</p>
+          <h2 style="font-size:1.6rem;">How Program Funds Are Allocated</h2>
+          <p style="color:var(--text-tertiary);max-width:500px;margin:0.5rem auto 0;">Every program dollar is carefully allocated based on need and impact potential.</p>
         </div>
 
-        <div style="max-width:720px;margin:2rem auto 0;">
+        <div class="program-breakdown">
           <div class="breakdown-row" data-reveal>
-            <span class="breakdown-label">🛡️ Child Protection</span>
+            <span class="breakdown-label">Child Protection</span>
             <div class="breakdown-bar-wrap">
-              <div class="progress-bar"><div class="progress-fill" data-width="38%" style="background:var(--blue);"></div></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="32%" style="background:var(--blue);"></div></div>
             </div>
-            <span class="breakdown-pct">38%</span>
+            <span class="breakdown-pct">32%</span>
           </div>
           <div class="breakdown-row" data-reveal data-delay="100">
-            <span class="breakdown-label">📚 Education</span>
+            <span class="breakdown-label">Education</span>
             <div class="breakdown-bar-wrap">
-              <div class="progress-bar"><div class="progress-fill" data-width="32%" style="background:var(--green);"></div></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="28%" style="background:var(--green);"></div></div>
             </div>
-            <span class="breakdown-pct" style="color:var(--green);">32%</span>
+            <span class="breakdown-pct" style="color:var(--green);">28%</span>
           </div>
           <div class="breakdown-row" data-reveal data-delay="200">
-            <span class="breakdown-label">🧠 Mental Health</span>
+            <span class="breakdown-label">Mental Health</span>
             <div class="breakdown-bar-wrap">
-              <div class="progress-bar"><div class="progress-fill" data-width="18%" style="background:var(--gold-dark);"></div></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="15%" style="background:var(--gold-dark);"></div></div>
             </div>
-            <span class="breakdown-pct" style="color:var(--gold-dark);">18%</span>
+            <span class="breakdown-pct" style="color:var(--gold-dark);">15%</span>
           </div>
           <div class="breakdown-row" data-reveal data-delay="300">
-            <span class="breakdown-label">🏠 Reintegration</span>
+            <span class="breakdown-label">Nutrition</span>
             <div class="breakdown-bar-wrap">
-              <div class="progress-bar"><div class="progress-fill" data-width="12%" style="background:var(--green-dark);"></div></div>
+              <div class="progress-bar"><div class="progress-fill" data-width="13%" style="background:var(--green-dark);"></div></div>
             </div>
-            <span class="breakdown-pct" style="color:var(--green-dark);">12%</span>
+            <span class="breakdown-pct" style="color:var(--green-dark);">13%</span>
+          </div>
+          <div class="breakdown-row" data-reveal data-delay="400">
+            <span class="breakdown-label">Reintegration</span>
+            <div class="breakdown-bar-wrap">
+              <div class="progress-bar"><div class="progress-fill" data-width="12%" style="background:var(--blue-dark);"></div></div>
+            </div>
+            <span class="breakdown-pct" style="color:var(--blue-dark);">12%</span>
           </div>
         </div>
       </div>
@@ -288,34 +564,31 @@
 
         <div class="download-grid">
           <div class="download-item" data-reveal>
-            <span class="icon">📊</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2025 Audited Financial Statements</strong>
               <span>PDF · ~1.8MB · Audited December 2025</span>
             </div>
             <a href="assets/docs/ACSS-Financial-Statements-2025.pdf" class="btn btn-blue btn-sm" target="_blank">Download</a>
           </div>
-
           <div class="download-item" data-reveal data-delay="100">
-            <span class="icon">📈</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2025 Annual Report</strong>
               <span>PDF · ~4.2MB · Published April 2025</span>
             </div>
             <a href="assets/docs/ACSS-Annual-Report-2025.pdf" class="btn btn-blue btn-sm" target="_blank">Download</a>
           </div>
-
           <div class="download-item" data-reveal>
-            <span class="icon">💰</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2024 Financial Statements</strong>
               <span>PDF · ~1.5MB · Audited December 2024</span>
             </div>
             <a href="assets/docs/ACSS-Financial-Statements-2024.pdf" class="btn btn-blue btn-sm" target="_blank">Download</a>
           </div>
-
           <div class="download-item" data-reveal data-delay="100">
-            <span class="icon">📋</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>IRS Form 990 (Equivalent)</strong>
               <span>PDF · ~0.8MB · Filed 2025</span>
@@ -323,7 +596,6 @@
             <a href="assets/docs/ACSS-Form-990-2025.pdf" class="btn btn-blue btn-sm" target="_blank">Download</a>
           </div>
         </div>
-
         <p style="text-align:center;margin-top:2rem;font-size:.85rem;color:var(--text-tertiary);" data-reveal>
           📄 All documents are in PDF format. Place your reports in <code>assets/docs/</code>.
         </p>
@@ -337,7 +609,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
-          <p>Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, and reintegration.</p>
+          <p style="margin-top:1rem;">Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
           <div class="footer-social" aria-label="Social media">
             <a href="#" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -357,21 +629,25 @@
           <h4>Organization</h4>
           <ul>
             <li><a href="about.html">About ACSS</a></li>
-            <li><a href="board.html">Board of Directors</a></li>
+            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="policies.html">Policies &amp; Safeguarding</a></li>
             <li><a href="impact.html">Impact &amp; Reports</a></li>
-            <li><a href="financials.html">Financial Transparency</a></li>
-            <li><a href="news.html">News &amp; Updates</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Our Programs</h4>
           <ul>
-            <li><a href="programs.html#protection">Child Protection</a></li>
-            <li><a href="programs.html#education">Education</a></li>
-            <li><a href="programs.html#mental-health">Mental Health</a></li>
-            <li><a href="programs.html#reintegration">Reintegration</a></li>
-            <li><a href="get-involved.html">Volunteer</a></li>
-            <li><a href="get-involved.html#partner">Partner With Us</a></li>
+            <li><a href="child-protection.html">Child Protection</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
+            <li><a href="reintegration.html">Family Reintegration</a></li>
+            <li><a href="emergency-response.html">Emergency Response</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="partners.html">Partner With Us</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
@@ -379,7 +655,7 @@
           <p>Get stories, updates, and impact reports from South Sudan.</p>
           <form class="footer-newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
           </form>
         </div>
       </div>
