@@ -36,13 +36,14 @@
     .story-card-large {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
       background: var(--white);
       border-radius: var(--radius-xl);
       overflow: hidden;
       border: 1px solid var(--gray-200);
       margin-bottom: 3rem;
       transition: all 0.3s ease;
+      align-items: center;
     }
     .story-card-large:hover {
       transform: translateY(-4px);
@@ -51,8 +52,18 @@
     .story-card-large .story-image {
       aspect-ratio: 4/3;
       background: var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-height: 280px;
     }
-    .story-card-large .story-content { padding: 2rem; }
+    .story-card-large .story-image .img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--gray-300);
+      border-radius: var(--radius-lg);
+    }
+    .story-card-large .story-content { padding: 1.5rem 1.5rem 1.5rem 0; }
     .story-card-large .story-content .tag {
       display: inline-block;
       font-size: 0.7rem;
@@ -63,10 +74,11 @@
       background: rgba(46,139,87,0.1);
       padding: 0.25rem 0.75rem;
       border-radius: 100px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
-    .story-card-large .story-content h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
-    .story-card-large .story-content p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.8; }
+    .story-card-large .story-content h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    .story-card-large .story-content p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.8rem; line-height: 1.7; }
+    .story-card-large .story-content p:last-of-type { margin-bottom: 1.2rem; }
 
     .stories-grid {
       display: grid;
@@ -103,11 +115,20 @@
     .story-card .story-body p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
 
     @media (max-width: 900px) {
-      .story-card-large { grid-template-columns: 1fr; }
+      .story-card-large { 
+        grid-template-columns: 1fr; 
+        gap: 0;
+      }
+      .story-card-large .story-image {
+        max-height: 220px;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      }
+      .story-card-large .story-content { padding: 1.5rem; }
       .stories-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .stories-grid { grid-template-columns: 1fr; }
+      .story-card-large .story-image { max-height: 180px; }
     }
   </style>
 </head>
@@ -118,8 +139,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
@@ -263,9 +284,11 @@
 
         <!-- Featured Story -->
         <div class="story-card-large" data-reveal>
-          <div class="story-image img-placeholder" style="border:2px dashed var(--gray-300);">
-            <span class="placeholder-icon">👧</span>
-            <span class="placeholder-text" style="font-size:0.75rem;">Place: <code>assets/images/stories/amara-featured.jpg</code></span>
+          <div class="story-image">
+            <div class="img-placeholder">
+              <span class="placeholder-icon">👧</span>
+              <span class="placeholder-text" style="font-size:0.7rem;">Place: <code>assets/images/stories/amara-featured.jpg</code></span>
+            </div>
           </div>
           <div class="story-content">
             <span class="tag">⭐ Featured Story</span>
