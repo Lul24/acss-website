@@ -12,6 +12,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    :root {
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
     .governance-hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
       padding: 80px 0 60px;
@@ -30,6 +57,62 @@
     }
     .governance-hero h1 { color: var(--white); }
     .governance-hero .lead { color: rgba(255,255,255,0.85); }
+
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(30, 122, 74, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.blue {
+      color: var(--blue);
+      background: rgba(12, 74, 110, 0.08);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
 
     .governance-section { padding: 80px 0; }
     .governance-grid {
@@ -65,17 +148,42 @@
       border-radius: var(--radius-lg);
       padding: 1.5rem;
       border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
     }
-    .board-member .avatar {
+    .board-member:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .board-member .board-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 0.75rem;
+      display: block;
+      border: 3px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .board-member:hover .board-img {
+      border-color: var(--blue);
+      transform: scale(1.05);
+    }
+    .board-member .board-img-placeholder {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       background: var(--gray-100);
-      margin: 0 auto 1rem;
+      margin: 0 auto 0.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2rem;
+      border: 3px solid var(--gray-300);
+      transition: all 0.3s ease;
+    }
+    .board-member:hover .board-img-placeholder {
+      border-color: var(--blue);
+      background: rgba(12, 74, 110, 0.04);
     }
     .board-member h4 { font-size: 1rem; margin-bottom: 0.25rem; }
     .board-member .role { font-size: 0.8rem; color: var(--green); font-weight: 600; }
@@ -100,6 +208,37 @@
     .committee-card ul { list-style: disc; margin-left: 1.25rem; font-size: 0.88rem; color: var(--text-secondary); }
     .committee-card ul li { margin-bottom: 0.35rem; }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 1024px) {
       .board-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -117,8 +256,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
@@ -266,27 +405,38 @@
         </div>
 
         <div class="board-grid">
+          <!-- Board Member 1 - Chairperson -->
           <div class="board-member" data-reveal>
-            <div class="avatar">👤</div>
-            <h4>[Chairperson Name]</h4>
+            <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu - Chairperson" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
+            <h4>Gatkuoth Liah Diu</h4>
             <p class="role">Chairperson</p>
-            <p class="bio">Human rights lawyer with 20+ years of experience in East African humanitarian law.</p>
+            <p class="bio">Founder & Executive Director, ACSS.</p>
           </div>
+
+          <!-- Board Member 2 - Vice Chair -->
           <div class="board-member" data-reveal data-delay="100">
-            <div class="avatar">👤</div>
-            <h4>[Vice Chair Name]</h4>
+            <img src="assets/images/team/lul-gatwech.jpg" alt="Lul Gatwech - Vice Chairperson" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
+            <h4>Lul Gatwech</h4>
             <p class="role">Vice Chairperson</p>
-            <p class="bio">Child protection specialist with 15 years of experience with UNICEF.</p>
+            <p class="bio">At ACSS, dedicated to scaling organizational capacity and advancing strategic initiatives.</p>
           </div>
+
+          <!-- Board Member 3 - Treasurer -->
           <div class="board-member" data-reveal data-delay="200">
-            <div class="avatar">👤</div>
-            <h4>[Treasurer Name]</h4>
+            <img src="assets/images/team/regina-salam.jpg" alt="Regina Salam - Treasurer" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
+            <h4>Regina Salam</h4>
             <p class="role">Treasurer</p>
-            <p class="bio">Certified accountant with 18 years of NGO financial management experience.</p>
+            <p class="bio">Specialized in NGO financial management and strategic resource allocation.</p>
           </div>
+
+          <!-- Board Member 4 - Secretary -->
           <div class="board-member" data-reveal data-delay="300">
-            <div class="avatar">👤</div>
-            <h4>[Secretary Name]</h4>
+            <img src="assets/images/team/puok-makuey.jpg" alt="Puok Makuey - Secretary" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
+            <h4>Puok Makuey</h4>
             <p class="role">Secretary</p>
             <p class="bio">Corporate governance expert with experience in international development.</p>
           </div>
@@ -380,7 +530,7 @@
           <p>Get stories, updates, and impact reports from South Sudan.</p>
           <form class="footer-newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
           </form>
         </div>
       </div>
