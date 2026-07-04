@@ -3,78 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ACSS Nutrition & Food Security Program — Fighting child malnutrition in South Sudan through school feeding, therapeutic care, and sustainable agriculture.">
-  <meta property="og:title" content="Nutrition & Food Security — ACSS South Sudan">
-  <meta property="og:image" content="assets/images/programs/nutrition-hero.jpg">
-  <title>Nutrition & Food Security — Fighting Child Malnutrition | ACSS</title>
-  <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
+  <meta name="description" content="ACSS Education Program — Bringing quality education to out-of-school children in South Sudan.">
+  <meta property="og:title" content="Education — ACSS">
+  <meta property="og:image" content="assets/images/programs/education.jpg">
+  <title>Education — ACSS South Sudan</title>
   
-  <!-- Bootstrap 5.3.0 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicon - Complete Set with Versioning -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/favicon-96x96.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=2">
+  <link rel="icon" href="assets/logo/favicon.ico?v=2" type="image/x-icon">
+  <link rel="manifest" href="assets/logo/site.webmanifest?v=2">
+  <meta name="apple-mobile-web-app-title" content="ACSS">
+  <meta name="application-name" content="ACSS">
+  <meta name="msapplication-TileColor" content="#0A4D8C">
+  <meta name="theme-color" content="#ffffff">
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
   
   <style>
-    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
     :root {
-      --blue: #1a5276;
-      --blue-dark: #0e3a54;
-      --blue-light: #2a7ba8;
-      --green: #2E8B57;
-      --green-dark: #1f6340;
-      --green-light: #3cb371;
-      --gold: #F4B400;
-      --gold-dark: #c99200;
-      --orange: #E67E22;
-      --orange-dark: #d35400;
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
       --gray-50: #F8F9FA;
       --gray-100: #F1F3F5;
       --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
       --text-primary: #1A1A2E;
       --text-secondary: #3d3d56;
       --text-tertiary: #6C757D;
-      --shadow-sm: 0 2px 6px rgba(26, 82, 118, 0.06);
-      --shadow-md: 0 8px 20px rgba(26, 82, 118, 0.10);
-      --shadow-lg: 0 16px 40px rgba(26, 82, 118, 0.12);
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
       --radius-xl: 24px;
-      --transition: 0.25s ease;
     }
 
-    /* ── PAGE HERO ── */
-    .page-hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 40%, var(--green-light) 100%);
-      padding: 4rem 0 3rem;
+    .program-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-light) 100%);
+      padding: 80px 0 60px;
       position: relative;
       overflow: hidden;
     }
-    .page-hero::after {
+    .program-hero::after {
       content: '';
       position: absolute;
       bottom: -1px;
       left: 0;
       right: 0;
-      height: 48px;
-      background: #fff;
+      height: 60px;
+      background: var(--white);
       clip-path: ellipse(55% 100% at 50% 100%);
     }
-    .page-hero h1 {
-      color: #fff;
-      margin-bottom: 0.75rem;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-    }
-    .page-hero .lead {
-      color: rgba(255,255,255,.85);
-      font-size: 1rem;
-    }
+    .program-hero h1 { color: var(--white); }
+    .program-hero .lead { color: rgba(255,255,255,0.85); }
+
     .breadcrumb {
       display: flex;
       gap: 0.4rem;
@@ -95,7 +91,6 @@
       opacity: 0.5;
     }
 
-    /* ── SECTION HEADER ── */
     .section-tag {
       display: inline-block;
       font-family: 'Poppins', sans-serif;
@@ -104,7 +99,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--green);
-      background: rgba(46, 139, 87, 0.08);
+      background: rgba(30, 122, 74, 0.08);
       padding: 0.25rem 0.9rem;
       border-radius: 100px;
       margin-bottom: 0.75rem;
@@ -112,6 +107,10 @@
     .section-tag.white {
       color: #fff;
       background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.gold {
+      color: var(--gold-dark);
+      background: rgba(212, 160, 23, 0.08);
     }
     .section-header {
       max-width: 620px;
@@ -128,136 +127,129 @@
       font-size: 0.95rem;
     }
 
-    /* ── IMPACT NUMBERS ── */
-    .impact-numbers {
-      background: #fff;
-      padding: 40px 0;
-      border-bottom: 2px solid var(--gray-200);
-    }
-    .impact-grid {
+    .program-details { padding: 80px 0; }
+    .program-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
     }
-    .impact-item {
+    .program-content h2 { margin-bottom: 1rem; }
+    .program-content p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .program-content ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+    .program-content ul li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+
+    .program-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
+    .stat-box {
       text-align: center;
-      padding: 1.25rem 0.75rem;
-      border-right: 1px solid var(--gray-200);
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
     }
-    .impact-item:last-child { border-right: none; }
-    .impact-item .big-num {
+    .stat-box .number {
       font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 800;
       color: var(--green);
       display: block;
-      line-height: 1;
     }
-    .impact-item p { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.3rem; }
+    .stat-box .label { font-size: 0.85rem; color: var(--text-tertiary); }
 
-    /* ── CONTENT SECTIONS ── */
-    .content-section {
-      padding: 64px 0;
-    }
-    .content-section:nth-child(even) { background: var(--gray-50); }
-
-    .content-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .content-layout.reverse { direction: rtl; }
-    .content-layout.reverse > * { direction: ltr; }
-
-    .content-media img {
+    .program-image { position: sticky; top: 100px; }
+    .program-image img {
       width: 100%;
+      border-radius: var(--radius-xl);
       aspect-ratio: 4/3;
-      border-radius: var(--radius-xl, 24px);
       object-fit: cover;
     }
-    .content-media .img-placeholder {
+    .program-image .img-placeholder {
       width: 100%;
       aspect-ratio: 4/3;
-      border-radius: var(--radius-xl, 24px);
+      border-radius: var(--radius-xl);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      gap: 0.3rem;
       background: var(--gray-100);
       color: var(--text-tertiary);
       font-size: 0.8rem;
       border: 2px dashed var(--gray-300);
     }
-    .content-media .badge-float {
-      position: relative;
-      margin-top: -2rem;
-      margin-left: 1.5rem;
-      background: #fff;
-      border-radius: var(--radius-lg, 16px);
-      padding: 0.75rem 1.25rem;
-      box-shadow: var(--shadow-lg);
-      display: inline-block;
+    .program-image .img-placeholder .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
     }
-    .content-media .badge-float strong {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
+    .program-image .img-placeholder .placeholder-text {
+      text-align: center;
+      padding: 0 0.6rem;
+    }
+
+    .services-section { background: var(--gray-50); padding: 64px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-card .icon { 
+      font-size: 0.75rem; 
+      font-weight: 700;
+      margin-bottom: 0.75rem; 
+      display: block; 
+      letter-spacing: 0.05em;
       color: var(--green);
     }
-    .content-media .badge-float span { font-size: 0.75rem; color: var(--text-tertiary); }
+    .service-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
 
-    .content-text h2 { margin-bottom: 0.75rem; font-size: 1.6rem; }
-    .content-text .lead { margin-bottom: 1.25rem; font-size: 1.05rem; }
-
-    .feature-list {
-      margin: 1.5rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+    .impact-stories { padding: 64px 0; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .feature-item {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
+    .story-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
     }
-    .feature-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: var(--radius-sm, 6px);
-      background: rgba(46,139,87,.1);
+    .story-card .story-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: var(--gray-100);
+    }
+    .story-card .img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      color: var(--green);
-      letter-spacing: 0.05em;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
     }
-    .feature-item h4 { font-size: 0.9rem; margin-bottom: 0.15rem; font-weight: 700; }
-    .feature-item p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+    .story-card-body { padding: 1.5rem; }
+    .story-card-body h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .story-card-body p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
 
-    .stats-row {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-      padding: 1.25rem;
-      background: rgba(46,139,87,.06);
-      border-radius: var(--radius-md, 10px);
-    }
-    .stat { text-align: center; }
-    .stat strong {
-      display: block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--green);
-      line-height: 1;
-    }
-    .stat span { font-size: 0.75rem; color: var(--text-tertiary); }
-
-    /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -274,10 +266,6 @@
       border: 2px solid transparent;
       text-decoration: none;
     }
-    .btn-lg {
-      padding: 0.8rem 1.8rem;
-      font-size: 0.95rem;
-    }
     .btn-sm {
       padding: 0.4rem 0.9rem;
       font-size: 0.75rem;
@@ -292,13 +280,13 @@
       border-color: var(--green-dark);
       transform: translateY(-1px);
     }
-    .btn-outline-green {
+    .btn-outline-blue {
       background: transparent;
-      color: var(--green);
-      border-color: var(--green);
+      color: var(--blue);
+      border-color: var(--blue);
     }
-    .btn-outline-green:hover {
-      background: var(--green);
+    .btn-outline-blue:hover {
+      background: var(--blue);
       color: #fff;
     }
     .btn-primary {
@@ -311,33 +299,7 @@
       border-color: var(--gold-dark);
       transform: translateY(-1px);
     }
-    .btn-blue {
-      background: var(--blue);
-      color: #fff;
-      border-color: var(--blue);
-    }
-    .btn-blue:hover {
-      background: var(--blue-dark);
-      border-color: var(--blue-dark);
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: #fff;
-    }
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
 
-    /* ── IMAGE PLACEHOLDER ── */
     .img-placeholder {
       display: flex;
       flex-direction: column;
@@ -360,51 +322,43 @@
       padding: 0 0.6rem;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 992px) {
-      .content-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .content-layout.reverse { direction: ltr; }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .impact-item { border-bottom: 1px solid var(--gray-200); }
+    @media (max-width: 1024px) {
+      .program-grid { grid-template-columns: 1fr; }
+      .program-image { position: static; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 768px) {
-      .content-section { padding: 48px 0; }
-      .stats-row { gap: 1rem; }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .program-stats { grid-template-columns: 1fr; }
     }
-
-    [data-delay="100"] { transition-delay: .1s !important; }
-    [data-delay="200"] { transition-delay: .2s !important; }
-    [data-delay="300"] { transition-delay: .3s !important; }
-    [data-delay="400"] { transition-delay: .4s !important; }
-
-    .section-tag.gold { color: var(--gold-dark); background: rgba(244,180,0,.1); }
-    .section-tag.orange { color: var(--orange); background: rgba(230,126,34,.1); }
   </style>
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left">
+        <span>Juba, Central Equatoria, South Sudan</span>
+        <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+211912345678">+211 912 345 678</a>
+        <div class="lang-switch">
+          <a href="#" data-lang="en" class="active">EN</a>
+          <a href="#" data-lang="ar">عر</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
-        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
-        <div class="nav-logo-text">
-          <strong>ACSS</strong>
-          <span>Abandoned Child South Sudan</span>
-        </div>
-      </a>
-      
-      <ul class="nav-links" role="list">
+      <a class="nav-logo" href="index.html"><img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48"><div class="nav-logo-text"><strong>ACSS</strong><span>Abandoned Child South Sudan</span></div></a>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li class="nav-item-dropdown">
           <a href="about.html" class="nav-link-dropdown">About ▾</a>
@@ -421,9 +375,9 @@
           <a href="programs.html" class="nav-link-dropdown active">Programs ▾</a>
           <ul class="dropdown-menu">
             <li><a href="child-protection.html">Child Protection</a></li>
-            <li><a href="education.html">Education</a></li>
+            <li><a href="education.html" class="active">Education</a></li>
             <li><a href="mental-health.html">Mental Health &amp; Psychosocial Support</a></li>
-            <li><a href="nutrition.html" class="active">Nutrition &amp; Food Security</a></li>
+            <li><a href="nutrition.html">Nutrition &amp; Food Security</a></li>
             <li><a href="reintegration.html">Family Reintegration</a></li>
             <li><a href="emergency-response.html">Emergency Response</a></li>
           </ul>
@@ -441,7 +395,7 @@
             <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
           </ul>
         </li>
-        <!-- NEWS DROPDOWN REMOVED - news.html has been deleted -->
+        <!-- NEWS DROPDOWN REMOVED -->
         <li class="nav-item-dropdown">
           <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
           <ul class="dropdown-menu">
@@ -454,28 +408,15 @@
         </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
-      <div class="nav-cta">
-        <a href="donate.html" class="btn btn-primary btn-sm" data-track="donate">Donate Now</a>
-      </div>
-      
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-cta"><a href="donate.html" class="btn btn-primary btn-sm">Donate Now</a></div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ══ MOBILE NAV ══════════════════════════════════════════ -->
+  <!-- MOBILE NAV -->
   <div class="nav-overlay"></div>
   <nav class="mobile-nav" aria-label="Mobile navigation">
-    <div class="mobile-nav-header">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36">
-        <div class="nav-logo-text"><strong>ACSS</strong></div>
-      </a>
-      <button class="mobile-nav-close" aria-label="Close menu">✕</button>
-    </div>
-    
+    <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36"><div class="nav-logo-text"><strong>ACSS</strong></div></a><button class="mobile-nav-close" aria-label="Close menu">✕</button></div>
     <div class="mobile-nav-links">
       <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
       <div class="mobile-nav-item">
@@ -493,9 +434,9 @@
         <button class="mobile-dropdown-toggle open" data-target="mobile-programs">Programs <span class="arrow">▾</span></button>
         <div class="mobile-submenu open" id="mobile-programs">
           <a href="child-protection.html">Child Protection</a>
-          <a href="education.html">Education</a>
+          <a href="education.html" class="active">Education</a>
           <a href="mental-health.html">Mental Health &amp; Psychosocial Support</a>
-          <a href="nutrition.html" class="active">Nutrition &amp; Food Security</a>
+          <a href="nutrition.html">Nutrition &amp; Food Security</a>
           <a href="reintegration.html">Family Reintegration</a>
           <a href="emergency-response.html">Emergency Response</a>
         </div>
@@ -513,7 +454,7 @@
           <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
         </div>
       </div>
-      <!-- NEWS DROPDOWN REMOVED - news.html has been deleted -->
+      <!-- NEWS DROPDOWN REMOVED -->
       <div class="mobile-nav-item">
         <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
         <div class="mobile-submenu" id="mobile-involved">
@@ -524,290 +465,164 @@
           <a href="campaigns.html">Fundraising Campaigns</a>
         </div>
       </div>
-      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
     </div>
-
-    <div class="mobile-nav-footer">
-      <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a>
-    </div>
+    <div class="mobile-nav-footer"><a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a></div>
   </nav>
 
   <main id="main-content">
 
-    <!-- ══ PAGE HERO ══════════════════════════════════════════ -->
-    <section class="page-hero" aria-label="Nutrition Program">
+    <section class="program-hero" aria-label="Education Program">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span class="breadcrumb-sep">›</span>
           <a href="programs.html">Programs</a>
           <span class="breadcrumb-sep">›</span>
-          <span aria-current="page">Nutrition</span>
+          <span aria-current="page">Education</span>
         </nav>
-        <span class="section-tag white">Program 04</span>
-        <h1>Nutrition &amp; Food Security</h1>
-        <p class="lead">A hungry child cannot learn. A malnourished child cannot heal. We provide the nutrition children need to grow, learn, and thrive.</p>
+        <span class="section-tag white">Program 02</span>
+        <h1>Education</h1>
+        <p class="lead">South Sudan has the world's highest proportion of out-of-school children. We are working to change that — one classroom at a time.</p>
       </div>
     </section>
 
-    <!-- ══ IMPACT NUMBERS ══════════════════════════════════════ -->
-    <div class="impact-numbers" aria-label="Key nutrition statistics 2025">
+    <section class="program-details" aria-labelledby="program-heading">
       <div class="container">
-        <div class="impact-grid">
-          <div class="impact-item" data-reveal>
-            <span class="big-num" data-count="1000">0</span>
-            <p>Children Nourished</p>
-          </div>
-          <div class="impact-item" data-reveal data-delay="100">
-            <span class="big-num" data-count="100">0</span>
-            <p>Families Supported</p>
-          </div>
-          <div class="impact-item" data-reveal data-delay="200">
-            <span class="big-num" data-count="5">0</span>
-            <p>Distribution Centers</p>
-          </div>
-          <div class="impact-item" data-reveal data-delay="300">
-            <span class="big-num" data-count="94">0</span>
-            <p>% Recovery Rate</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="program-grid">
+          <div class="program-content">
+            <h2 id="program-heading">Learning for Every Child</h2>
+            <p>Conflict, displacement, poverty, and gender discrimination have robbed millions of South Sudanese children of their right to learn. Our education program meets children where they are, providing accelerated, flexible, and quality learning opportunities regardless of prior schooling.</p>
 
-    <!-- ══ SECTION 1: THE PROBLEM ══════════════════════════════ -->
-    <section class="content-section" aria-labelledby="problem-heading">
-      <div class="container">
-        <div class="content-layout">
-          <div class="content-media" data-reveal>
-            <img src="assets/images/programs/nutrition-problem.jpg" alt="Child malnutrition in South Sudan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="program-stats">
+              <div class="stat-box">
+                <span class="number" data-count="0">0</span>
+                <span class="label">Students Enrolled</span>
+              </div>
+              <div class="stat-box">
+                <span class="number" data-count="0">0</span>
+                <span class="label">Learning Centers</span>
+              </div>
+              <div class="stat-box">
+                <span class="number" data-count="0">0</span>
+                <span class="label">% Completion Rate</span>
+              </div>
+            </div>
+
+            <h3>What We Do</h3>
+            <ul>
+              <li>Run accelerated learning centers in conflict-affected areas</li>
+              <li>Provide school supplies and uniforms to children</li>
+              <li>Train teachers in trauma-informed pedagogy</li>
+              <li>Support girls' education through targeted programs</li>
+              <li>Create safe learning environments for displaced children</li>
+            </ul>
+
+            <a href="donate.html?program=education" class="btn btn-green">Support This Program</a>
+          </div>
+
+          <div class="program-image">
+            <img src="assets/images/programs/education.jpg" alt="Education Program - ACSS South Sudan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="img-placeholder" style="display:none;">
-              <span class="placeholder-icon"></span>
-              <span class="placeholder-text">assets/images/programs/nutrition-problem.jpg</span>
-            </div>
-            <div class="badge-float">
-              <strong>Crisis Level</strong>
-              <span>IPC Phase 4 - Emergency</span>
-            </div>
-          </div>
-
-          <div class="content-text" data-reveal data-delay="200">
-            <span class="section-tag orange">The Crisis</span>
-            <h2 id="problem-heading">The Hunger Crisis in South Sudan</h2>
-            <p class="lead">South Sudan faces one of the world's most severe food crises. Over 7 million people are food insecure, and acute malnutrition threatens the lives of children.</p>
-            <p>Conflict, displacement, climate shocks, and economic collapse have created a perfect storm of hunger. Children are the most vulnerable — malnutrition weakens immune systems, stunts physical growth, and impairs cognitive development permanently.</p>
-
-            <div class="stats-row" style="background:rgba(230,126,34,.08);">
-              <div class="stat"><strong style="color:var(--orange);">1M</strong><span>Food insecure people</span></div>
-              <div class="stat"><strong style="color:var(--orange);">1M</strong><span>Children acutely malnourished</span></div>
-              <div class="stat"><strong style="color:var(--orange);">35%</strong><span>Global acute malnutrition rate</span></div>
-            </div>
-
-            <div class="btn-group">
-              <a href="donate.html?program=nutrition" class="btn btn-green">Help Fight Hunger</a>
-              <a href="impact.html" class="btn btn-outline-green">See Our Impact</a>
+              <span class="placeholder-icon">📚</span>
+              <span class="placeholder-text">assets/images/programs/education.jpg</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══ SECTION 2: OUR APPROACH ════════════════════════════ -->
-    <section class="content-section" style="background:var(--gray-50);" aria-labelledby="approach-heading">
+    <section class="services-section" aria-labelledby="services-heading">
       <div class="container">
-        <div class="content-layout reverse">
-          <div class="content-media" data-reveal>
-            <img src="assets/images/programs/nutrition-approach.jpg" alt="Nutrition program approach - ACSS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag">Services</span>
+          <h2 id="services-heading">Our Education Services</h2>
+          <p>Quality education for every child, no matter their background.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-reveal>
+            <span class="icon">ALC</span>
+            <h4>Accelerated Learning Centers</h4>
+            <p>Learning centers providing condensed, quality curricula that allow older children who missed years of schooling to catch up rapidly.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="100">
+            <span class="icon">TEACH</span>
+            <h4>Teacher Training & Support</h4>
+            <p>Ongoing professional development for local teachers, including trauma-informed pedagogy and inclusive education methods.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="200">
+            <span class="icon">KITS</span>
+            <h4>School Supplies & Materials</h4>
+            <p>Complete school kits distributed to every enrolled child — books, uniforms, stationery, and hygiene items.</p>
+          </div>
+          <div class="service-card" data-reveal>
+            <span class="icon">GIRLS</span>
+            <h4>Girls' Education Initiative</h4>
+            <p>Targeted support for girls, including community sensitization, female mentors, and safety measures to keep girls in school.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="100">
+            <span class="icon">SAFE</span>
+            <h4>Safe School Environments</h4>
+            <p>Creating safe, protective learning environments where children can focus on their education without fear.</p>
+          </div>
+          <div class="service-card" data-reveal data-delay="200">
+            <span class="icon">SCHOLAR</span>
+            <h4>Scholarships & Support</h4>
+            <p>Scholarships for children to continue their education beyond primary school, including secondary and vocational training.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-stories" aria-labelledby="stories-heading">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="section-tag gold">Stories</span>
+          <h2 id="stories-heading">Transforming Lives Through Education</h2>
+          <p>Every child who completes our program carries the hope of a brighter future.</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-card" data-reveal>
+            <img src="assets/images/stories/grace-story.jpg" alt="Grace's story" class="story-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="img-placeholder" style="display:none;">
-              <span class="placeholder-icon"></span>
-              <span class="placeholder-text">assets/images/programs/nutrition-approach.jpg</span>
+              <span class="placeholder-icon">📖</span>
+              <span class="placeholder-text">grace-story.jpg</span>
+            </div>
+            <div class="story-card-body">
+              <h4>Grace Builds Her Future</h4>
+              <p>At 16, Grace had never attended a single day of school. After two years in our ALC, she passed her national exams with distinction.</p>
+              <a href="success-stories.html" class="btn btn-outline-blue btn-sm" style="margin-top:0.75rem;">Read More</a>
             </div>
           </div>
-
-          <div class="content-text" data-reveal data-delay="200">
-            <span class="section-tag gold">Our Approach</span>
-            <h2 id="approach-heading">Integrated Nutrition Intervention</h2>
-            <p class="lead">We tackle child malnutrition through a comprehensive approach — combining emergency response with long-term food security solutions.</p>
-            
-            <div class="feature-list">
-              <div class="feature-item">
-                <div class="feature-icon">MEAL</div>
-                <div>
-                  <h4>School Feeding</h4>
-                  <p>Daily nutritious meals at all our Accelerated Learning Centers — improving attendance, concentration, and learning outcomes for students.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">SCRN</div>
-                <div>
-                  <h4>Malnutrition Screening &amp; Treatment</h4>
-                  <p>Regular MUAC screening for all children in our care, with therapeutic feeding for severe acute malnutrition and supplementary feeding for moderate cases.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">FARM</div>
-                <div>
-                  <h4>Agricultural Support &amp; Livelihoods</h4>
-                  <p>Seeds, tools, and training for families to grow their own food — building resilience and reducing dependency on humanitarian aid.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">EDUC</div>
-                <div>
-                  <h4>Nutrition Education</h4>
-                  <p>Community workshops on balanced nutrition, optimal infant and young child feeding practices, and household meal planning for caregivers.</p>
-                </div>
-              </div>
+          <div class="story-card" data-reveal data-delay="100">
+            <img src="assets/images/stories/john-story.jpg" alt="John's story" class="story-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder" style="display:none;">
+              <span class="placeholder-icon">📖</span>
+              <span class="placeholder-text">john-story.jpg</span>
             </div>
-
-            <div class="btn-group">
-              <a href="donate.html?program=nutrition" class="btn btn-green">Support Nutrition</a>
+            <div class="story-card-body">
+              <h4>John's Journey Back to School</h4>
+              <p>Displaced by conflict at age 10, John missed four years of school. Our accelerated program helped him catch up and graduate.</p>
+              <a href="success-stories.html" class="btn btn-outline-blue btn-sm" style="margin-top:0.75rem;">Read More</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 3: PROGRAM COMPONENTS ══════════════════════ -->
-    <section class="content-section" aria-labelledby="components-heading">
-      <div class="container">
-        <div class="section-header center" style="max-width:700px;margin:0 auto 3rem;" data-reveal>
-          <span class="section-tag green">How We Help</span>
-          <h2 id="components-heading">Our Nutrition Interventions</h2>
-          <p>We address malnutrition at every level — from emergency treatment to sustainable food security.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-reveal>
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--green);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;"></div>
-              <h3 style="font-size:1.05rem;font-weight:700;">Therapeutic Feeding</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Emergency treatment for children with severe acute malnutrition using ready-to-use therapeutic foods (RUTF) and medical monitoring.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ 94% recovery rate</span>
-                <span>6-week treatment cycle</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-reveal data-delay="100">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--gold-dark);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;">🥘</div>
-              <h3 style="font-size:1.05rem;font-weight:700;">School Meals</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Daily fortified meals at learning centers, ensuring children have the energy to learn and grow — with take-home rations for families.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ Students served</span>
-                <span>Multiple centers</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-reveal data-delay="200">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--green-dark);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;">🌱</div>
-              <h3 style="font-size:1.05rem;font-weight:700;">Agricultural Support</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Providing seeds, tools, and training for families — enabling sustainable food production and reducing humanitarian dependency.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ Families supported</span>
-                <span>Training provided</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-reveal data-delay="300">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--orange);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;">👩</div>
-              <h3 style="font-size:1.05rem;font-weight:700;">Nutrition Education</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Community workshops on balanced diets, meal planning, and optimal infant and young child feeding practices for caregivers.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ Caregivers trained</span>
-                <span>Modules delivered</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-reveal data-delay="400">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--blue);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;"></div>
-              <h3 style="font-size:1.05rem;font-weight:700;">Food Distribution</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Regular food distributions across South Sudan, reaching families with children in our programs.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ Distribution centers</span>
-                <span>Regular distributions</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-reveal data-delay="500">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--gold);height:100%;">
-              <div style="font-size:2.2rem;margin-bottom:0.75rem;"></div>
-              <h3 style="font-size:1.05rem;font-weight:700;">Monitoring &amp; Evaluation</h3>
-              <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.5rem 0 1rem;">Regular nutrition screening, growth monitoring, and program evaluation to ensure impact and adapt to changing needs.</p>
-              <div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--text-tertiary);border-top:1px solid var(--gray-200);padding-top:0.75rem;flex-wrap:wrap;">
-                <span>✅ Monthly screening</span>
-                <span>Real-time data</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 4: SUCCESS STORIES ══════════════════════════ -->
-    <section class="content-section" style="background:var(--gray-50);" aria-labelledby="stories-heading">
-      <div class="container">
-        <div class="section-header center" style="max-width:700px;margin:0 auto 2.5rem;" data-reveal>
-          <span class="section-tag gold">Impact Stories</span>
-          <h2 id="stories-heading">Real Lives Changed</h2>
-          <p>Meet some of the children whose lives were transformed through our nutrition program.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6" data-reveal>
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);display:flex;gap:1.25rem;align-items:flex-start;">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;">👧</div>
-              <div>
-                <h4 style="font-size:0.95rem;font-weight:700;">Mary's Recovery</h4>
-                <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.25rem 0;">At 2 years old, Mary arrived at our center with severe acute malnutrition. After 6 weeks of therapeutic feeding, she reached a healthy weight and is now thriving.</p>
-                <span style="font-size:0.75rem;color:var(--green);font-weight:600;">Recovered</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" data-reveal data-delay="100">
-            <div style="background:#fff;border-radius:var(--radius-lg,16px);padding:1.75rem;box-shadow:var(--shadow-sm);display:flex;gap:1.25rem;align-items:flex-start;">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;">👦</div>
-              <div>
-                <h4 style="font-size:0.95rem;font-weight:700;">James' Journey</h4>
-                <p style="font-size:0.85rem;color:var(--text-tertiary);margin:0.25rem 0;">James, 10, was too weak to attend school. Through our school feeding program and agricultural support for his family, he now has the energy to learn and play.</p>
-                <span style="font-size:0.75rem;color:var(--green);font-weight:600;">Back in school</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ CTA ════════════════════════════════════════════════ -->
-    <section style="background:linear-gradient(135deg,var(--green-dark),var(--green),var(--green-light));padding:64px 0;text-align:center;" aria-labelledby="nutrition-cta">
-      <div class="container">
-        <span class="section-tag white" data-reveal>Make a Difference</span>
-        <h2 id="nutrition-cta" style="color:#fff;margin:.5rem auto 1rem;max-width:560px;" data-reveal>Help Us Fight Child Hunger</h2>
-        <p style="color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 1.5rem;" data-reveal>Your donation provides nutritious meals, therapeutic feeding, and agricultural support to children and families in South Sudan.</p>
-        <div class="btn-group" style="justify-content:center;" data-reveal>
-          <a href="donate.html?program=nutrition" class="btn btn-primary btn-lg">Donate to Nutrition</a>
-          <a href="get-involved.html" class="btn btn-secondary btn-lg" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff;">Volunteer with Us</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="120" height="52">
-          <p style="margin-top:1rem;">Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
+          <p>Protecting and restoring the lives of children affected by conflict in South Sudan through education, psychosocial support, healthcare, nutrition, and reintegration.</p>
           <div class="footer-social" aria-label="Social media">
             <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
             <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -819,7 +634,6 @@
           <h4>Organization</h4>
           <ul>
             <li><a href="about.html">About ACSS</a></li>
-            <li><a href="about.html#mission">Mission &amp; Vision</a></li>
             <li><a href="founder.html">Founder</a></li>
             <li><a href="leadership.html">Leadership Team</a></li>
             <li><a href="governance.html">Governance</a></li>
@@ -873,6 +687,36 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    const statNumbers = document.querySelectorAll('.stat-box .number');
+    let statsAnimated = false;
 
+    function animateStats() {
+      if (statsAnimated) return;
+      const windowHeight = window.innerHeight;
+      statNumbers.forEach(stat => {
+        const rect = stat.getBoundingClientRect();
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const target = parseInt(stat.getAttribute('data-count'));
+          let current = 0;
+          const increment = target / 50;
+          const updateStat = () => {
+            current += increment;
+            if (current < target) {
+              stat.textContent = Math.ceil(current);
+              setTimeout(updateStat, 20);
+            } else {
+              stat.textContent = target.toLocaleString();
+            }
+          };
+          updateStat();
+          statsAnimated = true;
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateStats);
+    setTimeout(animateStats, 500);
+  </script>
 </body>
 </html>
