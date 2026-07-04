@@ -24,6 +24,35 @@
   <link rel="stylesheet" href="styles.css">
   
   <style>
+    :root {
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --blue-soft: #D4E2ED;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition-fast: 0.15s ease;
+    }
+
     .leadership-hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
       padding: 80px 0 60px;
@@ -43,6 +72,62 @@
     .leadership-hero h1 { color: var(--white); }
     .leadership-hero .lead { color: rgba(255,255,255,0.85); }
 
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(30, 122, 74, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.blue {
+      color: var(--blue);
+      background: rgba(12, 74, 110, 0.08);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
     .leadership-section { padding: 80px 0; }
     .leadership-grid {
       display: grid;
@@ -51,7 +136,6 @@
       margin-top: 3rem;
     }
 
-    /* ── LEADER CARD ── */
     .leader-card {
       background: var(--white);
       border-radius: var(--radius-xl);
@@ -65,7 +149,6 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* ── LEADER PHOTO - CIRCULAR ── */
     .leader-card-img-wrapper {
       padding: 1.5rem 1.5rem 0.5rem 1.5rem;
     }
@@ -85,7 +168,6 @@
       transform: scale(1.05);
     }
 
-    /* ── IMAGE PLACEHOLDER (fallback) ── */
     .img-placeholder {
       width: 150px;
       height: 150px;
@@ -156,62 +238,35 @@
 
     .executive-section { background: var(--gray-50); padding: 64px 0; }
 
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      display: flex;
-      gap: 0.4rem;
+    .btn {
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 1.2rem;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,.5);
-    }
-    .breadcrumb a {
-      color: rgba(255,255,255,.75);
-      transition: color 0.2s;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
       text-decoration: none;
     }
-    .breadcrumb a:hover {
-      color: var(--gold);
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
     }
-    .breadcrumb-sep {
-      opacity: 0.5;
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
     }
-
-    /* ── SECTION HEADER ── */
-    .section-tag {
-      display: inline-block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: rgba(46, 139, 87, 0.08);
-      padding: 0.25rem 0.9rem;
-      border-radius: 100px;
-      margin-bottom: 0.75rem;
-    }
-    .section-tag.white {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.12);
-    }
-    .section-tag.blue {
-      color: var(--blue);
-      background: rgba(26, 82, 118, 0.08);
-    }
-    .section-header {
-      max-width: 620px;
-      margin-bottom: 2.5rem;
-    }
-    .section-header.center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .section-header p {
-      margin-top: 0.75rem;
-      color: var(--text-tertiary);
-      font-size: 0.95rem;
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 1024px) {
@@ -248,11 +303,11 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <span>Helsinki, Finland</span>
+        <span>Juba, Central Equatoria, South Sudan</span>
         <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
       </div>
       <div class="top-bar-right">
-        <a href="tel:+358452785499">+358 45 278 5499</a>
+        <a href="tel:+211912345678">+211 912 345 678</a>
         <div class="lang-switch">
           <a href="#" data-lang="en" class="active">EN</a>
           <a href="#" data-lang="ar">عر</a>
