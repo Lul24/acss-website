@@ -13,6 +13,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    :root {
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
     .board-hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
       padding: 80px 0 60px;
@@ -32,6 +59,66 @@
     .board-hero h1 { color: var(--white); }
     .board-hero .lead { color: rgba(255,255,255,0.85); }
 
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(30, 122, 74, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-tag.blue {
+      color: var(--blue);
+      background: rgba(12, 74, 110, 0.08);
+    }
+    .section-tag.gold {
+      color: var(--gold-dark);
+      background: rgba(212, 160, 23, 0.08);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
     .board-section { padding: 80px 0; }
     .board-intro {
       max-width: 720px;
@@ -42,7 +129,7 @@
     .board-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 2rem;
     }
     .board-member {
@@ -52,48 +139,66 @@
       border: 1px solid var(--gray-200);
       transition: all 0.3s ease;
       text-align: center;
+      padding-bottom: 0.5rem;
     }
     .board-member:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
     }
-    .board-member .avatar {
-      width: 100%;
+    .board-member .board-img {
+      width: 60%;
       aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0.75rem auto 0.25rem;
+      display: block;
+      border: 3px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .board-member:hover .board-img {
+      border-color: var(--blue);
+      transform: scale(1.05);
+    }
+    .board-member .board-img-placeholder {
+      width: 60%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
       background: var(--gray-100);
+      margin: 0.75rem auto 0.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-size: 2.5rem;
       color: var(--text-tertiary);
+      border: 3px solid var(--gray-300);
+      transition: all 0.3s ease;
     }
-    .board-member .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .board-member:hover .board-img-placeholder {
+      border-color: var(--blue);
+      background: rgba(12, 74, 110, 0.04);
     }
-    .board-member-body { padding: 1.75rem; }
-    .board-member-body h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .board-member-body { padding: 0.25rem 1.25rem 1.25rem; }
+    .board-member-body h3 { font-size: 0.95rem; margin-bottom: 0.1rem; }
     .board-member-body .role {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: var(--green);
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .board-member-body .bio {
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       color: var(--text-secondary);
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     .board-member-body .term {
       display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.7rem;
+      margin-top: 0.5rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: var(--text-tertiary);
       background: var(--gray-100);
-      padding: 0.2rem 0.8rem;
+      padding: 0.15rem 0.7rem;
       border-radius: 100px;
     }
 
@@ -156,6 +261,47 @@
     .doc-item .info span { font-size: 0.82rem; color: var(--text-tertiary); }
     .doc-item .btn { flex-shrink: 0; }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.75rem;
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 1024px) {
       .board-grid { grid-template-columns: repeat(2, 1fr); }
       .committees-grid { grid-template-columns: repeat(2, 1fr); }
@@ -164,6 +310,10 @@
       .board-grid { grid-template-columns: 1fr; }
       .committees-grid { grid-template-columns: 1fr; }
       .docs-grid { grid-template-columns: 1fr; }
+      .board-member .board-img { width: 45%; }
+    }
+    @media (max-width: 480px) {
+      .board-member .board-img { width: 40%; }
     }
   </style>
 </head>
@@ -174,8 +324,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
@@ -326,11 +476,10 @@
         <div class="board-grid">
           <!-- Board Member 1 - Chairperson -->
           <div class="board-member" data-reveal>
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <img src="assets/images/team/founder-portrait.jpg" alt="Gatkuoth Liah Diu - Chairperson" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
             <div class="board-member-body">
-              <h3>[Chairperson Name]</h3>
+              <h3>Gatkuoth Liah Diu</h3>
               <p class="role">Chairperson</p>
               <p class="bio">Human rights lawyer with 20+ years of experience in East African humanitarian law and child protection advocacy.</p>
               <span class="term">Term: 2024–2027</span>
@@ -339,11 +488,10 @@
 
           <!-- Board Member 2 - Vice Chair -->
           <div class="board-member" data-reveal data-delay="100">
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <img src="assets/images/team/lul-gatwech.jpg" alt="Lul Gatwech - Vice Chairperson" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
             <div class="board-member-body">
-              <h3>[Vice Chair Name]</h3>
+              <h3>Lul Gatwech</h3>
               <p class="role">Vice Chairperson</p>
               <p class="bio">Child protection specialist with 15 years of experience with UNICEF in conflict-affected regions across Africa.</p>
               <span class="term">Term: 2024–2027</span>
@@ -352,11 +500,10 @@
 
           <!-- Board Member 3 - Treasurer -->
           <div class="board-member" data-reveal data-delay="200">
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <img src="assets/images/team/regina-salam.jpg" alt="Regina Salam - Treasurer" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
             <div class="board-member-body">
-              <h3>[Treasurer Name]</h3>
+              <h3>Regina Salam</h3>
               <p class="role">Treasurer</p>
               <p class="bio">Certified accountant with 18 years of NGO financial management experience, ensuring full financial accountability.</p>
               <span class="term">Term: 2024–2027</span>
@@ -365,11 +512,10 @@
 
           <!-- Board Member 4 - Secretary -->
           <div class="board-member" data-reveal>
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <img src="assets/images/team/puok-makuey.jpg" alt="Puok Makuey - Secretary" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
             <div class="board-member-body">
-              <h3>[Secretary Name]</h3>
+              <h3>Puok Makuey</h3>
               <p class="role">Secretary</p>
               <p class="bio">Corporate governance expert with experience in international development and nonprofit board management.</p>
               <span class="term">Term: 2024–2027</span>
@@ -378,11 +524,10 @@
 
           <!-- Board Member 5 -->
           <div class="board-member" data-reveal data-delay="100">
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <img src="assets/images/team/nyachangkuoth-gatleel.jpg" alt="Nyachangkuoth Gatleel - Board Member" class="board-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="board-img-placeholder" style="display:none;">👤</div>
             <div class="board-member-body">
-              <h3>[Member Name]</h3>
+              <h3>Nyachangkuoth Gatleel</h3>
               <p class="role">Board Member</p>
               <p class="bio">Mental health specialist with expertise in trauma recovery for children affected by armed conflict.</p>
               <span class="term">Term: 2024–2027</span>
@@ -391,11 +536,9 @@
 
           <!-- Board Member 6 -->
           <div class="board-member" data-reveal data-delay="200">
-            <div class="avatar">
-              <span>👤</span>
-            </div>
+            <div class="board-img-placeholder">👤</div>
             <div class="board-member-body">
-              <h3>[Member Name]</h3>
+              <h3>David Gel</h3>
               <p class="role">Board Member</p>
               <p class="bio">Education expert with 20 years of experience in humanitarian education programs in South Sudan and the region.</p>
               <span class="term">Term: 2024–2027</span>
@@ -416,7 +559,7 @@
 
         <div class="committees-grid">
           <div class="committee-card" data-reveal>
-            <h4>🛡️ Governance Committee</h4>
+            <h4>Governance Committee</h4>
             <ul>
               <li>Board effectiveness and evaluation</li>
               <li>Leadership succession planning</li>
@@ -425,7 +568,7 @@
             </ul>
           </div>
           <div class="committee-card" data-reveal data-delay="100">
-            <h4>💰 Finance Committee</h4>
+            <h4>Finance Committee</h4>
             <ul>
               <li>Budget oversight and approval</li>
               <li>Financial audit and compliance</li>
@@ -434,7 +577,7 @@
             </ul>
           </div>
           <div class="committee-card" data-reveal data-delay="200">
-            <h4>📋 Programs Committee</h4>
+            <h4>Programs Committee</h4>
             <ul>
               <li>Program quality assurance</li>
               <li>Impact measurement</li>
@@ -457,7 +600,7 @@
 
         <div class="docs-grid">
           <div class="doc-item" data-reveal>
-            <span class="icon">📋</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>Board Charter</strong>
               <span>Roles, responsibilities, and governance framework · PDF · ~0.5MB</span>
@@ -466,7 +609,7 @@
           </div>
 
           <div class="doc-item" data-reveal data-delay="100">
-            <span class="icon">📊</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2025 Annual Report</strong>
               <span>Full program outcomes and organizational highlights · PDF · ~4.2MB</span>
@@ -475,7 +618,7 @@
           </div>
 
           <div class="doc-item" data-reveal>
-            <span class="icon">💰</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2025 Audited Financial Statements</strong>
               <span>Independent audit · PDF · ~1.8MB</span>
@@ -484,7 +627,7 @@
           </div>
 
           <div class="doc-item" data-reveal data-delay="100">
-            <span class="icon">📈</span>
+            <span class="icon"></span>
             <div class="info">
               <strong>2025 Impact Report</strong>
               <span>Detailed outcomes data with case studies · PDF · ~3.1MB</span>
@@ -546,7 +689,7 @@
           <p>Get stories, updates, and impact reports from South Sudan.</p>
           <form class="footer-newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:var(--font-head);font-weight:700;padding:.7rem 1rem;border-radius:var(--radius-md);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
           </form>
         </div>
       </div>
