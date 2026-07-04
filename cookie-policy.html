@@ -17,16 +17,23 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
-  <!-- NAVIGATION (UPDATED) -->
+  <!-- NAVIGATION (UPDATED - NO DROPDOWNS FOR CONTACT, NO NEWS) -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html"><img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48"><div class="nav-logo-text"><strong>ACSS</strong><span>Abandoned Child South Sudan</span></div></a>
-      <ul class="nav-links">
+      <a class="nav-logo" href="index.html" aria-label="ACSS Home">
+        <img src="assets/logo/acss-logo.png" alt="ACSS Logo" width="48" height="48">
+        <div class="nav-logo-text">
+          <strong>ACSS</strong>
+          <span>Abandoned Child South Sudan</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li class="nav-item-dropdown">
           <a href="about.html" class="nav-link-dropdown">About ▾</a>
@@ -63,7 +70,7 @@
             <li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
           </ul>
         </li>
-        <!-- NEWS DROPDOWN REMOVED -->
+        <!-- NEWS DROPDOWN REMOVED - news.html has been deleted -->
         <li class="nav-item-dropdown">
           <a href="get-involved.html" class="nav-link-dropdown">Get Involved ▾</a>
           <ul class="dropdown-menu">
@@ -74,17 +81,31 @@
             <li><a href="campaigns.html">Fundraising Campaigns</a></li>
           </ul>
         </li>
+        <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-cta"><a href="donate.html" class="btn btn-primary btn-sm">Donate Now</a></div>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+      <div class="nav-cta">
+        <a href="donate.html" class="btn btn-primary btn-sm" data-track="donate">Donate Now</a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- MOBILE NAV (UPDATED) -->
+  <!-- MOBILE NAV (UPDATED - NO DROPDOWNS FOR CONTACT, NO NEWS) -->
   <div class="nav-overlay"></div>
   <nav class="mobile-nav" aria-label="Mobile navigation">
-    <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36"><div class="nav-logo-text"><strong>ACSS</strong></div></a><button class="mobile-nav-close" aria-label="Close menu">✕</button></div>
+    <div class="mobile-nav-header">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/acss-logo.png" alt="ACSS" width="36" height="36">
+        <div class="nav-logo-text"><strong>ACSS</strong></div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+    </div>
+    
     <div class="mobile-nav-links">
       <div class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></div>
       <div class="mobile-nav-item">
@@ -122,7 +143,7 @@
           <a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a>
         </div>
       </div>
-      <!-- NEWS DROPDOWN REMOVED -->
+      <!-- NEWS DROPDOWN REMOVED - news.html has been deleted -->
       <div class="mobile-nav-item">
         <button class="mobile-dropdown-toggle" data-target="mobile-involved">Get Involved <span class="arrow">▾</span></button>
         <div class="mobile-submenu" id="mobile-involved">
@@ -133,11 +154,15 @@
           <a href="campaigns.html">Fundraising Campaigns</a>
         </div>
       </div>
+      <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
       <div class="mobile-nav-item">
         <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
-    <div class="mobile-nav-footer"><a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a></div>
+
+    <div class="mobile-nav-footer">
+      <a href="donate.html" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now</a>
+    </div>
   </nav>
 
   <main id="main-content">
@@ -235,7 +260,7 @@
           <p style="margin-left:1.5rem;">
             <strong>Abandoned Child South Sudan</strong><br>
             Email: <a href="mailto:info@acss.org" style="color:var(--blue);">info@acss.org</a><br>
-            Address: Helsinki, Finland
+            Address: Juba, Central Equatoria, South Sudan
           </p>
 
           <h2 style="margin-top:2.5rem;margin-bottom:1rem;">7. Policy Changes</h2>
@@ -246,7 +271,7 @@
     </section>
   </main>
 
-  <!-- FOOTER (UPDATED) -->
+  <!-- FOOTER (UPDATED - NO NEWS LINK) -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -268,7 +293,7 @@
             <li><a href="about.html#founder">Founder's Story</a></li>
             <li><a href="about.html#team">Our Team</a></li>
             <li><a href="impact.html">Impact &amp; Reports</a></li>
-            <!-- News & Updates link removed -->
+            <!-- News & Updates link removed - news.html has been deleted -->
           </ul>
         </div>
         <div class="footer-col">
