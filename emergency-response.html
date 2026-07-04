@@ -13,8 +13,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    :root {
+      --blue: #0C4A6E;
+      --blue-dark: #082F4A;
+      --blue-light: #1A6B8A;
+      --green: #1E7A4A;
+      --green-dark: #145A35;
+      --green-light: #2E9B62;
+      --gold: #D4A017;
+      --gold-dark: #A87D10;
+      --gold-light: #E8C84A;
+      --accent-orange: #E07030;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
+      --text-primary: #1A1A2E;
+      --text-secondary: #3d3d56;
+      --text-tertiary: #6C757D;
+      --shadow-sm: 0 2px 6px rgba(12, 74, 110, 0.06);
+      --shadow-md: 0 8px 20px rgba(12, 74, 110, 0.10);
+      --shadow-lg: 0 16px 40px rgba(12, 74, 110, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
     .program-hero {
-      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 60%, #ff6b6b 100%);
+      background: linear-gradient(135deg, #A93226 0%, #E74C3C 60%, #F1948A 100%);
       padding: 80px 0 60px;
       position: relative;
       overflow: hidden;
@@ -31,6 +58,58 @@
     }
     .program-hero h1 { color: var(--white); }
     .program-hero .lead { color: rgba(255,255,255,0.85); }
+
+    .breadcrumb {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.5);
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.75);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+    .breadcrumb-sep {
+      opacity: 0.5;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(30, 122, 74, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .section-tag.white {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
 
     .emergency-alert {
       background: rgba(231,76,60,0.05);
@@ -66,7 +145,7 @@
       border-radius: var(--radius-lg);
     }
     .stat-box .number {
-      font-family: var(--font-head);
+      font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       font-weight: 800;
       color: #e74c3c;
@@ -80,6 +159,28 @@
       border-radius: var(--radius-xl);
       aspect-ratio: 4/3;
       object-fit: cover;
+    }
+    .program-image .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--gray-100);
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border: 2px dashed var(--gray-300);
+    }
+    .program-image .img-placeholder .placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+    .program-image .img-placeholder .placeholder-text {
+      text-align: center;
+      padding: 0 0.6rem;
     }
 
     .services-section { background: var(--gray-50); padding: 64px 0; }
@@ -104,6 +205,33 @@
     .service-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
     .service-card p { font-size: 0.88rem; color: var(--text-secondary); margin: 0; }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      border-radius: var(--radius-md, 10px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-primary);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 1024px) {
       .program-grid { grid-template-columns: 1fr; }
       .program-image { position: static; }
@@ -121,8 +249,8 @@
 
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-left"><span>📍 Helsinki, Finland</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
-      <div class="top-bar-right"><a href="tel:+358452785499">+358 45 278 5499</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
+      <div class="top-bar-left"><span>📍 Juba, Central Equatoria, South Sudan</span><a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a></div>
+      <div class="top-bar-right"><a href="tel:+211912345678">+211 912 345 678</a><div class="lang-switch"><a href="#" data-lang="en" class="active">EN</a><a href="#" data-lang="ar">عر</a></div></div>
     </div>
   </div>
 
@@ -264,9 +392,9 @@
     <section class="program-details" aria-labelledby="program-heading">
       <div class="container">
         <div class="emergency-alert" data-reveal>
-          <span style="font-size:3rem;">🚨</span>
+          <span style="font-size:3rem;"></span>
           <p style="font-size:1.1rem;font-weight:600;margin:0.5rem 0;">24/7 Child Protection Emergency Hotline</p>
-          <p class="hotline">+211 000 000 001</p>
+          <p class="hotline">+211 912 345 679</p>
           <p style="font-size:0.9rem;color:var(--text-tertiary);">Available 24 hours a day, 7 days a week</p>
         </div>
 
@@ -277,15 +405,15 @@
 
             <div class="program-stats">
               <div class="stat-box">
-                <span class="number" data-count="24">0</span>
+                <span class="number" data-count="0">0</span>
                 <span class="label">Hour Response Time</span>
               </div>
               <div class="stat-box">
-                <span class="number" data-count="8">0</span>
+                <span class="number" data-count="0">0</span>
                 <span class="label">Response Teams</span>
               </div>
               <div class="stat-box">
-                <span class="number" data-count="500">0</span>
+                <span class="number" data-count="0">0</span>
                 <span class="label">Emergency Cases</span>
               </div>
             </div>
@@ -324,7 +452,7 @@
           <div class="service-card" data-reveal>
             <span class="icon"></span>
             <h4>Rapid Deployment</h4>
-            <p>Emergency response teams deployed within 24 hours of any crisis or reported child protection incident.</p>
+            <p>Emergency response teams deployed within 0 hours of any crisis or reported child protection incident.</p>
           </div>
           <div class="service-card" data-reveal data-delay="100">
             <span class="icon"></span>
@@ -401,7 +529,7 @@
           <p>Get stories, updates, and impact reports from South Sudan.</p>
           <form class="footer-newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit" style="background:var(--gold);color:var(--text-primary);font-family:'Poppins',sans-serif;font-weight:700;padding:.6rem 1rem;border-radius:var(--radius-md,10px);cursor:pointer;white-space:nowrap;border:none;">Subscribe</button>
           </form>
         </div>
       </div>
