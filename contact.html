@@ -8,7 +8,7 @@
   <meta property="og:image" content="assets/images/hero/contact-hero.jpg">
   <title>Contact Us — ACSS | Abandoned Child South Sudan</title>
   
-  <!-- Favicon -->
+  <!-- Favicon - Complete Set with Versioning -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png?v=2">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/favicon-96x96.png?v=2">
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=2">
@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="styles.css">
   
   <style>
+    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
     :root {
       --blue: #0C4A6E;
       --blue-dark: #082F4A;
@@ -53,6 +54,7 @@
       --transition: 0.25s ease;
     }
 
+    /* ── PAGE HERO ── */
     .page-hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
       padding: 4rem 0 3rem;
@@ -120,6 +122,7 @@
       opacity: 0.5;
     }
 
+    /* ── CONTACT LAYOUT ── */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -128,6 +131,7 @@
       padding: 64px 0;
     }
 
+    /* ── CONTACT INFO CARD ── */
     .contact-info-card {
       background: linear-gradient(145deg, var(--blue-dark), var(--blue));
       border-radius: var(--radius-xl, 24px);
@@ -199,6 +203,7 @@
     }
     .contact-social-links a:hover { background: var(--gold); color: var(--text-primary); }
 
+    /* ── CONTACT FORM ── */
     .contact-form-card {
       background: #fff;
       border-radius: var(--radius-xl, 24px);
@@ -209,6 +214,7 @@
     .contact-form-card h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
     .contact-form-card > p { margin-bottom: 1.5rem; color: var(--text-tertiary); font-size: 0.95rem; }
 
+    /* Subject tabs */
     .subject-tabs {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -232,6 +238,7 @@
     .subject-tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
     .subject-tab .tab-icon { display: block; font-size: 0.6rem; font-weight: 700; margin-bottom: 0.2rem; letter-spacing: 0.05em; }
 
+    /* Form elements */
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     .form-group { margin-bottom: 1rem; }
     .form-label {
@@ -259,6 +266,7 @@
     textarea.form-control { resize: vertical; min-height: 100px; }
     .char-count { font-size: 0.72rem; color: var(--text-tertiary); text-align: right; margin-top: 0.2rem; }
 
+    /* ── OFFICES SECTION ── */
     .offices-section { background: var(--gray-50); padding: 64px 0; }
     .office-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
     .office-card {
@@ -284,6 +292,7 @@
     }
     .office-detail { font-size: 0.82rem; color: var(--text-tertiary); display: flex; gap: 0.4rem; margin-bottom: 0.3rem; }
 
+    /* ── MAP ── */
     .map-section { padding: 0; }
     .map-embed {
       width: 100%;
@@ -305,6 +314,7 @@
     }
     .map-wrapper { position: relative; }
 
+    /* ── FAQ ── */
     .contact-faq { padding: 64px 0; }
     .accordion-item {
       background: #fff;
@@ -356,6 +366,7 @@
       line-height: 1.7;
     }
 
+    /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -401,6 +412,7 @@
       transform: translateY(-1px);
     }
 
+    /* ── FORM SUCCESS ── */
     .form-success {
       display: none;
       text-align: center;
@@ -424,19 +436,7 @@
       margin: 0 auto 1.25rem;
     }
 
-    .spinner {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 0.6s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-info-card { position: static; }
@@ -480,7 +480,7 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
+  <!-- ══ NAVIGATION ══ -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="nav-logo" href="index.html" aria-label="ACSS Home">
@@ -539,6 +539,7 @@
             <li><a href="campaigns.html">Fundraising Campaigns</a></li>
           </ul>
         </li>
+        <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
 
@@ -552,7 +553,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE NAV -->
+  <!-- ══ MOBILE NAV ══ -->
   <div class="nav-overlay"></div>
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mobile-nav-header">
@@ -611,6 +612,7 @@
           <a href="campaigns.html">Fundraising Campaigns</a>
         </div>
       </div>
+      <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
       <div class="mobile-nav-item">
         <a href="contact.html" class="mobile-nav-link active">Contact</a>
       </div>
@@ -622,7 +624,7 @@
   </nav>
 
   <main id="main-content">
-    <!-- PAGE HERO -->
+    <!-- PAGE HERO - CENTERED -->
     <section class="page-hero beige-after" aria-label="Contact">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -636,7 +638,7 @@
       </div>
     </section>
 
-    <!-- CONTACT FORM + INFO -->
+    <!-- ══ CONTACT FORM + INFO ════════════════════════════════ -->
     <section aria-labelledby="contact-form-heading">
       <div class="container">
         <div class="contact-layout">
@@ -738,8 +740,8 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <!-- ══ FORMSPREE FORM - SIMPLIFIED ══ -->
-              <form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST">
+              <!-- ══ FORMSPREE FORM ══ -->
+              <form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST" aria-label="Contact form">
                 <!-- Formspree hidden fields -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
                 <input type="hidden" name="_replyto" value="email">
@@ -779,14 +781,9 @@
                   <p class="char-count"><span id="char-remaining">1500</span> characters remaining</p>
                 </div>
 
-                <div class="form-group">
-                  <label style="display:flex;gap:0.6rem;align-items:flex-start;cursor:pointer;">
-                    <input type="checkbox" name="newsletter" style="margin-top:3px;accent-color:var(--blue);">
-                    <span style="font-size:0.82rem;color:var(--text-tertiary);">Subscribe me to ACSS updates and impact reports</span>
-                  </label>
-                </div>
+                <!-- NEWSLETTER CHECKBOX REMOVED -->
 
-                <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;">
+                <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;" id="contact-submit-btn">
                   Send Message
                 </button>
                 <p style="font-size:0.75rem;text-align:center;color:var(--text-tertiary);margin-top:0.6rem;">
@@ -807,7 +804,7 @@
       </div>
     </section>
 
-    <!-- OFFICES -->
+    <!-- ══ OFFICES ════════════════════════════════════════════ -->
     <section class="offices-section" aria-labelledby="offices-heading">
       <div class="container">
         <div class="section-header center" style="margin-bottom:0;" data-reveal>
@@ -860,7 +857,7 @@
       </div>
     </section>
 
-    <!-- MAP -->
+    <!-- ══ MAP ════════════════════════════════════════════════ -->
     <section class="map-section" aria-label="ACSS headquarters location map">
       <div class="map-wrapper">
         <iframe
@@ -880,7 +877,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ══ CONTACT FAQ ════════════════════════════════════════ -->
     <section class="contact-faq" aria-labelledby="contact-faq-heading">
       <div class="container">
         <div class="section-header center" style="margin-bottom:2.5rem;" data-reveal>
@@ -1027,14 +1024,12 @@
     });
 
     // ── CHECK FOR FORMSPREE SUCCESS REDIRECT ──
-    // Formspree redirects to the same page with ?_formspree=success
     const form = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
 
     if (window.location.search.includes('_formspree=success')) {
       if (form) form.style.display = 'none';
       if (successDiv) successDiv.classList.add('active');
-      // Clean up the URL
       if (window.history && window.history.replaceState) {
         window.history.replaceState({}, document.title, window.location.pathname);
       }
