@@ -766,7 +766,7 @@
               </div>
 
               <!-- ══ NETLIFY FORM ══ -->
-              <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" aria-label="Contact form" novalidate>
+              <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" aria-label="Contact form">
                 <!-- Netlify Form Name (hidden) -->
                 <input type="hidden" name="form-name" value="contact">
                 
@@ -1064,15 +1064,13 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // ── CHECK FOR SUCCESSFUL SUBMISSION (after Netlify redirect) ──
+    // ── CHECK FOR SUCCESSFUL SUBMISSION ──
     const form = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
 
-    // If we came back from a successful Netlify form submission
     if (window.location.search.includes('form-name=contact') || window.location.search.includes('success=true')) {
       if (form) form.style.display = 'none';
       if (successDiv) successDiv.classList.add('active');
-      // Clean up the URL
       if (window.history && window.history.replaceState) {
         window.history.replaceState({}, document.title, window.location.pathname);
       }
@@ -1080,39 +1078,27 @@
 
     // ── FORM VALIDATION ──
     form?.addEventListener('submit', function(e) {
-      // Get form values
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
-      const consent = document.querySelector('[name="consent"]').checked;
 
-      // ── VALIDATION ──
       if (!name || !email || !message) {
         e.preventDefault();
-        showToast('Please fill in all required fields.', 'error');
+        alert('Please fill in all required fields.');
         return false;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         e.preventDefault();
-        showToast('Please enter a valid email address.', 'error');
-        return false;
-      }
-      if (!consent) {
-        e.preventDefault();
-        showToast('Please accept the privacy policy to continue.', 'error');
+        alert('Please enter a valid email address.');
         return false;
       }
 
-      // ── SHOW LOADING STATE ──
       const btn = document.getElementById('contact-submit-btn');
       if (btn) {
         btn.innerHTML = '<span class="spinner"></span> Sending...';
         btn.disabled = true;
       }
 
-      // ── ALLOW FORM TO SUBMIT TO NETLIFY ──
-      // We DO NOT call e.preventDefault() here
-      // The form will submit normally to Netlify
       return true;
     });
   </script>
