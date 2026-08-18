@@ -740,8 +740,8 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <!-- ══ FORMSPREE FORM ══ -->
-              <form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST" aria-label="Contact form">
+              <!-- ══ SIMPLE FORMSPREE FORM - NO JAVASCRIPT INTERFERENCE ══ -->
+              <form action="https://formspree.io/f/xqpzgbgo" method="POST">
                 <!-- Formspree hidden fields -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
                 <input type="hidden" name="_replyto" value="email">
@@ -781,9 +781,7 @@
                   <p class="char-count"><span id="char-remaining">1500</span> characters remaining</p>
                 </div>
 
-                <!-- NEWSLETTER CHECKBOX REMOVED -->
-
-                <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;" id="contact-submit-btn">
+                <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;">
                   Send Message
                 </button>
                 <p style="font-size:0.75rem;text-align:center;color:var(--text-tertiary);margin-top:0.6rem;">
@@ -1023,7 +1021,7 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // ── CHECK FOR FORMSPREE SUCCESS REDIRECT ──
+    // ── CHECK FOR FORMSPREE SUCCESS ──
     const form = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
 
