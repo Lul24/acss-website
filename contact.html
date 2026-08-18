@@ -702,12 +702,14 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <!-- ══ FORMSPREE FORM WITH FIX ══ -->
-              <form action="https://formspree.io/f/xqpzgbgo" method="POST">
-                <!-- Formspree hidden fields -->
-                <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
-                <input type="hidden" name="_replyto" value="email">
-                <input type="hidden" name="_format" value="plain">
+              <!-- ══ NETLIFY FORM (NO FORMPREE) ══ -->
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+                <input type="hidden" name="form-name" value="contact">
+                
+                <!-- Honeypot for spam -->
+                <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;height:0;width:0;">
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </div>
                 
                 <input type="hidden" name="subject_type" id="subject-type-input" value="general">
 
@@ -983,13 +985,15 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // ── CHECK FOR FORMSPREE SUCCESS ──
+    // ── NETLIFY FORM SUCCESS DETECTION ──
+    const form = document.querySelector('form[name="contact"]');
     const successDiv = document.getElementById('form-success');
 
-    if (window.location.search.includes('_formspree=success')) {
-      const form = document.querySelector('form');
+    // Check if form was submitted successfully (Netlify redirects with ?form-name=contact)
+    if (window.location.search.includes('form-name=contact')) {
       if (form) form.style.display = 'none';
       if (successDiv) successDiv.classList.add('active');
+      // Clean up URL
       if (window.history && window.history.replaceState) {
         window.history.replaceState({}, document.title, window.location.pathname);
       }
