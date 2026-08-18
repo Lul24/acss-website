@@ -436,17 +436,6 @@
       margin: 0 auto 1.25rem;
     }
 
-    /* ── HONEYPOT ── */
-    .honeypot {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      width: 0;
-    }
-
     /* ── SPINNER ── */
     .spinner {
       display: inline-block;
@@ -765,16 +754,12 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <!-- ══ NETLIFY FORM ══ -->
-              <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" aria-label="Contact form">
-                <!-- Netlify Form Name (hidden) -->
-                <input type="hidden" name="form-name" value="contact">
+              <!-- ══ FORMSPREE FORM ══ -->
+              <form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST" aria-label="Contact form">
+                <!-- Formspree hidden fields -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
+                <input type="hidden" name="_replyto" value="email">
                 
-                <!-- Honeypot field for spam protection -->
-                <div class="honeypot">
-                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </div>
-
                 <input type="hidden" name="subject_type" id="subject-type-input" value="general">
 
                 <div class="form-row">
@@ -817,13 +802,6 @@
                   </label>
                 </div>
 
-                <div class="form-group">
-                  <label style="display:flex;gap:0.6rem;align-items:flex-start;cursor:pointer;">
-                    <input type="checkbox" name="consent" required style="margin-top:3px;accent-color:var(--blue);">
-                    <span style="font-size:0.82rem;color:var(--text-tertiary);">I agree to the <a href="privacy.html" style="color:var(--blue);">Privacy Policy</a> and consent to ACSS processing my message. *</span>
-                  </label>
-                </div>
-
                 <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;" id="contact-submit-btn">
                   Send Message
                 </button>
@@ -832,7 +810,7 @@
                 </p>
               </form>
 
-              <!-- Success Message (hidden initially) -->
+              <!-- Success Message -->
               <div id="form-success" class="form-success">
                 <div class="success-icon">✅</div>
                 <h3>Thank You!</h3>
@@ -1064,19 +1042,11 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // ── CHECK FOR SUCCESSFUL SUBMISSION ──
+    // ── FORMSPREE SUBMISSION ──
     const form = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
+    const formContainer = document.querySelector('.contact-form-card');
 
-    if (window.location.search.includes('form-name=contact') || window.location.search.includes('success=true')) {
-      if (form) form.style.display = 'none';
-      if (successDiv) successDiv.classList.add('active');
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }
-    }
-
-    // ── FORM VALIDATION ──
     form?.addEventListener('submit', function(e) {
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
@@ -1099,8 +1069,21 @@
         btn.disabled = true;
       }
 
+      // Form will submit to Formspree
+      // Formspree will redirect to a success page
       return true;
     });
+
+    // ── CHECK FOR FORMSPREE SUCCESS REDIRECT ──
+    // Formspree redirects to the same page with ?_formspree=success
+    if (window.location.search.includes('_formspree=success')) {
+      if (form) form.style.display = 'none';
+      if (successDiv) successDiv.classList.add('active');
+      // Clean up the URL
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
   </script>
 </body>
 </html>
