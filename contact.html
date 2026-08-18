@@ -412,7 +412,7 @@
       transform: translateY(-1px);
     }
 
-    /* ── FORM SUCCESS / ERROR STATES ── */
+    /* ── FORM SUCCESS ── */
     .form-success {
       display: none;
       text-align: center;
@@ -445,6 +445,20 @@
       pointer-events: none;
       height: 0;
       width: 0;
+    }
+
+    /* ── SPINNER ── */
+    .spinner {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* ── RESPONSIVE ── */
@@ -1019,7 +1033,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
   <script>
-    // Subject tabs
+    // ── SUBJECT TABS ──
     const tabs = document.querySelectorAll('.subject-tab');
     const subjectInput = document.getElementById('subject-type-input');
     const emergencyNotice = document.getElementById('emergency-notice');
@@ -1042,7 +1056,7 @@
       });
     });
 
-    // Character counter
+    // ── CHARACTER COUNTER ──
     const msgField = document.getElementById('contact-message');
     const charCount = document.getElementById('char-remaining');
     msgField?.addEventListener('input', () => {
@@ -1050,28 +1064,29 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // Handle Netlify Form - Check for success parameter after redirect
+    // ── CHECK FOR SUCCESSFUL SUBMISSION (after Netlify redirect) ──
     const form = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
-    
-    // Check if we came back from a successful form submission
+
+    // If we came back from a successful Netlify form submission
     if (window.location.search.includes('form-name=contact') || window.location.search.includes('success=true')) {
       if (form) form.style.display = 'none';
       if (successDiv) successDiv.classList.add('active');
-      
-      // Clean up URL
+      // Clean up the URL
       if (window.history && window.history.replaceState) {
         window.history.replaceState({}, document.title, window.location.pathname);
       }
     }
 
-    // Form validation before submission
+    // ── FORM VALIDATION ──
     form?.addEventListener('submit', function(e) {
+      // Get form values
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
       const consent = document.querySelector('[name="consent"]').checked;
 
+      // ── VALIDATION ──
       if (!name || !email || !message) {
         e.preventDefault();
         showToast('Please fill in all required fields.', 'error');
@@ -1088,14 +1103,16 @@
         return false;
       }
 
-      // Show loading state
+      // ── SHOW LOADING STATE ──
       const btn = document.getElementById('contact-submit-btn');
       if (btn) {
         btn.innerHTML = '<span class="spinner"></span> Sending...';
         btn.disabled = true;
       }
-      
-      // Allow form to submit to Netlify
+
+      // ── ALLOW FORM TO SUBMIT TO NETLIFY ──
+      // We DO NOT call e.preventDefault() here
+      // The form will submit normally to Netlify
       return true;
     });
   </script>
