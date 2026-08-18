@@ -411,6 +411,40 @@
       transform: translateY(-1px);
     }
 
+    /* ── FORM SUCCESS / ERROR STATES ── */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .form-success.active {
+      display: block;
+    }
+    .form-success .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .form-success h3 {
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .form-success p {
+      color: var(--text-tertiary);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ── HONEYPOT ── */
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      width: 0;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -443,7 +477,7 @@
     <div class="container">
       <div class="top-bar-left">
         <span>Juba, Central Equatoria, South Sudan</span>
-        <a href="mailto:abandonedchildssd@proton.me">abandonedchildssd@proton.me</a>
+        <a href="mailto:info@infoacss.org">info@infoacss.org</a>
       </div>
       <div class="top-bar-right">
         <a href="tel:+211912345678">+211 912 345 678</a>
@@ -636,9 +670,9 @@
                 <div class="contact-detail-icon">@</div>
                 <div class="contact-detail-text">
                   <strong>Email</strong>
-                  <a href="mailto:info@acss.org">info@infoacss.org</a>
-                  <a href="mailto:media@acss.org"></a>
-                  <a href="mailto:partnerships@acss.org"></a>
+                  <a href="mailto:info@infoacss.org">info@infoacss.org</a>
+                  <a href="mailto:media@infoacss.org">media@infoacss.org</a>
+                  <a href="mailto:partnerships@infoacss.org">partnerships@infoacss.org</a>
                 </div>
               </div>
 
@@ -717,7 +751,16 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <form id="contact-form" aria-label="Contact form" novalidate>
+              <!-- ══ NETLIFY FORM ══ -->
+              <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form" novalidate>
+                <!-- Netlify Form Name (hidden) -->
+                <input type="hidden" name="form-name" value="contact">
+                
+                <!-- Honeypot field for spam protection -->
+                <div class="honeypot">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
+
                 <input type="hidden" name="subject_type" id="subject-type-input" value="general">
 
                 <div class="form-row">
@@ -734,7 +777,7 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="contact-org">Organization <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
-                    <input type="text" id="contact-org" name="org" class="form-control" autocomplete="organization" placeholder="Your organization">
+                    <input type="text" id="contact-org" name="organization" class="form-control" autocomplete="organization" placeholder="Your organization">
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="contact-phone">Phone <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
@@ -774,6 +817,14 @@
                   Your information is secure and will never be shared.
                 </p>
               </form>
+
+              <!-- Success Message (hidden initially) -->
+              <div id="form-success" class="form-success">
+                <div class="success-icon">✅</div>
+                <h3>Thank You!</h3>
+                <p>Your message has been received. Our team will get back to you within 24–48 hours.</p>
+                <button onclick="location.reload()" class="btn btn-blue" style="margin-top:1.25rem;">Send Another Message</button>
+              </div>
             </div>
           </div>
         </div>
@@ -795,7 +846,7 @@
             <span class="office-type">Headquarters</span>
             <div class="office-detail"><span>Juba, Central Equatoria, South Sudan</span></div>
             <div class="office-detail"><span><a href="tel:+211912345678" style="color:var(--blue);">+211 912 345 678</a></span></div>
-            <div class="office-detail"><span><a href="mailto:info@acss.org" style="color:var(--blue);">info@infoacss.org</a></span></div>
+            <div class="office-detail"><span><a href="mailto:info@infoacss.org" style="color:var(--blue);">info@infoacss.org</a></span></div>
           </div>
           <div class="office-card" data-reveal data-delay="100">
             <span class="office-flag">SSD</span>
@@ -998,31 +1049,56 @@
       charCount.textContent = 1500 - msgField.value.length;
     });
 
-    // Form submit
-    document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById('contact-submit-btn');
-      const original = btn.innerHTML;
+    // Handle Netlify Form submission - show success message
+    const form = document.getElementById('contact-form');
+    const successDiv = document.getElementById('form-success');
+    const formCard = form?.closest('.contact-form-card');
 
+    // Check for URL parameters after redirect (Netlify sends to same page with ?form-name=contact)
+    if (window.location.search.includes('form-name=contact')) {
+      // Hide the form, show success message
+      if (form) form.style.display = 'none';
+      if (successDiv) successDiv.classList.add('active');
+      
+      // Remove the query param from URL without reloading
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+
+    // Handle form submission via JavaScript (for validation + Netlify fallback)
+    form?.addEventListener('submit', function(e) {
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
       const consent = document.querySelector('[name="consent"]').checked;
 
-      if (!name || !email || !message) { showToast('Please fill in all required fields.', 'error'); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email address.', 'error'); return; }
-      if (!consent) { showToast('Please accept the privacy policy to continue.', 'error'); return; }
+      if (!name || !email || !message) {
+        e.preventDefault();
+        showToast('Please fill in all required fields.', 'error');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        e.preventDefault();
+        showToast('Please enter a valid email address.', 'error');
+        return;
+      }
+      if (!consent) {
+        e.preventDefault();
+        showToast('Please accept the privacy policy to continue.', 'error');
+        return;
+      }
 
-      btn.innerHTML = '<span class="spinner"></span> Sending...';
-      btn.disabled = true;
-
-      await new Promise(r => setTimeout(r, 1600));
-
-      showToast('Message sent! We\'ll reply within 24–48 hours.', 'success');
-      e.target.reset();
-      charCount.textContent = '1500';
-      btn.innerHTML = original;
-      btn.disabled = false;
+      // Let Netlify handle the submission - show loading state
+      const btn = document.getElementById('contact-submit-btn');
+      if (btn) {
+        btn.innerHTML = '<span class="spinner"></span> Sending...';
+        btn.disabled = true;
+      }
+      
+      // The form will submit to Netlify normally
+      // After submission, Netlify redirects back to this page with ?form-name=contact
+      // The page load check above will handle showing the success message
     });
   </script>
 </body>
