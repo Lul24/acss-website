@@ -31,7 +31,6 @@
   <link rel="stylesheet" href="styles.css">
   
   <style>
-    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
     :root {
       --blue: #0C4A6E;
       --blue-dark: #082F4A;
@@ -703,10 +702,13 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-              <!-- ══ FORMSPREE FORM ══ -->
+              <!-- ══ FORMSPREE FORM WITH FIX ══ -->
               <form action="https://formspree.io/f/xqpzgbgo" method="POST">
+                <!-- Formspree hidden fields -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
                 <input type="hidden" name="_replyto" value="email">
+                <input type="hidden" name="_format" value="plain">
+                
                 <input type="hidden" name="subject_type" id="subject-type-input" value="general">
 
                 <div class="form-row">
@@ -716,7 +718,6 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="contact-email">Email Address *</label>
-                    <!-- IMPORTANT: name="email" with type="email" for Formspree validation -->
                     <input type="email" id="contact-email" name="email" class="form-control" required autocomplete="email" placeholder="you@example.com">
                   </div>
                 </div>
