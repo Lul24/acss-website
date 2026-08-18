@@ -8,7 +8,7 @@
   <meta property="og:image" content="assets/images/hero/contact-hero.jpg">
   <title>Contact Us — ACSS | Abandoned Child South Sudan</title>
   
-  <!-- Favicon - Complete Set with Versioning -->
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png?v=2">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/logo/favicon-96x96.png?v=2">
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=2">
@@ -31,7 +31,6 @@
   <link rel="stylesheet" href="styles.css">
   
   <style>
-    /* ── OVERRIDE BOOTSTRAP WITH CUSTOM BRAND ── */
     :root {
       --blue: #0C4A6E;
       --blue-dark: #082F4A;
@@ -54,7 +53,6 @@
       --transition: 0.25s ease;
     }
 
-    /* ── PAGE HERO ── */
     .page-hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--green) 100%);
       padding: 4rem 0 3rem;
@@ -122,7 +120,6 @@
       opacity: 0.5;
     }
 
-    /* ── CONTACT LAYOUT ── */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -131,7 +128,6 @@
       padding: 64px 0;
     }
 
-    /* ── CONTACT INFO CARD ── */
     .contact-info-card {
       background: linear-gradient(145deg, var(--blue-dark), var(--blue));
       border-radius: var(--radius-xl, 24px);
@@ -203,7 +199,6 @@
     }
     .contact-social-links a:hover { background: var(--gold); color: var(--text-primary); }
 
-    /* ── CONTACT FORM ── */
     .contact-form-card {
       background: #fff;
       border-radius: var(--radius-xl, 24px);
@@ -214,7 +209,6 @@
     .contact-form-card h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
     .contact-form-card > p { margin-bottom: 1.5rem; color: var(--text-tertiary); font-size: 0.95rem; }
 
-    /* Subject tabs */
     .subject-tabs {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -238,7 +232,6 @@
     .subject-tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
     .subject-tab .tab-icon { display: block; font-size: 0.6rem; font-weight: 700; margin-bottom: 0.2rem; letter-spacing: 0.05em; }
 
-    /* Form elements */
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     .form-group { margin-bottom: 1rem; }
     .form-label {
@@ -266,7 +259,6 @@
     textarea.form-control { resize: vertical; min-height: 100px; }
     .char-count { font-size: 0.72rem; color: var(--text-tertiary); text-align: right; margin-top: 0.2rem; }
 
-    /* ── OFFICES SECTION ── */
     .offices-section { background: var(--gray-50); padding: 64px 0; }
     .office-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
     .office-card {
@@ -292,7 +284,6 @@
     }
     .office-detail { font-size: 0.82rem; color: var(--text-tertiary); display: flex; gap: 0.4rem; margin-bottom: 0.3rem; }
 
-    /* ── MAP ── */
     .map-section { padding: 0; }
     .map-embed {
       width: 100%;
@@ -314,7 +305,6 @@
     }
     .map-wrapper { position: relative; }
 
-    /* ── FAQ ── */
     .contact-faq { padding: 64px 0; }
     .accordion-item {
       background: #fff;
@@ -366,7 +356,6 @@
       line-height: 1.7;
     }
 
-    /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -412,7 +401,6 @@
       transform: translateY(-1px);
     }
 
-    /* ── FORM SUCCESS ── */
     .form-success {
       display: none;
       text-align: center;
@@ -436,7 +424,6 @@
       margin: 0 auto 1.25rem;
     }
 
-    /* ── SPINNER ── */
     .spinner {
       display: inline-block;
       width: 1rem;
@@ -450,7 +437,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-info-card { position: static; }
@@ -494,7 +480,7 @@
     </div>
   </div>
 
-  <!-- ══ NAVIGATION ══ -->
+  <!-- NAVIGATION -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="nav-logo" href="index.html" aria-label="ACSS Home">
@@ -553,7 +539,6 @@
             <li><a href="campaigns.html">Fundraising Campaigns</a></li>
           </ul>
         </li>
-        <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
 
@@ -567,7 +552,7 @@
     </div>
   </nav>
 
-  <!-- ══ MOBILE NAV ══ -->
+  <!-- MOBILE NAV -->
   <div class="nav-overlay"></div>
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mobile-nav-header">
@@ -626,7 +611,6 @@
           <a href="campaigns.html">Fundraising Campaigns</a>
         </div>
       </div>
-      <!-- CONTACT - SIMPLE LINK, NO DROPDOWN -->
       <div class="mobile-nav-item">
         <a href="contact.html" class="mobile-nav-link active">Contact</a>
       </div>
@@ -638,7 +622,7 @@
   </nav>
 
   <main id="main-content">
-    <!-- PAGE HERO - CENTERED -->
+    <!-- PAGE HERO -->
     <section class="page-hero beige-after" aria-label="Contact">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -652,7 +636,7 @@
       </div>
     </section>
 
-    <!-- ══ CONTACT FORM + INFO ════════════════════════════════ -->
+    <!-- CONTACT FORM + INFO -->
     <section aria-labelledby="contact-form-heading">
       <div class="container">
         <div class="contact-layout">
@@ -754,61 +738,61 @@
                 <p style="font-size:0.85rem;color:var(--text-primary);margin:0;">Call our 24/7 emergency hotline immediately: <a href="tel:+211912345679" style="color:#c0392b;font-weight:700;">+211 912 345 679</a>. Do not wait for a form response.</p>
               </div>
 
-<!-- ══ FORMSPREE FORM ══ -->
-<form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST" aria-label="Contact form">
-  <!-- Formspree hidden fields -->
-  <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
-  <input type="hidden" name="_replyto" value="email">
-  
-  <input type="hidden" name="subject_type" id="subject-type-input" value="general">
+              <!-- ══ FORMSPREE FORM - SIMPLIFIED ══ -->
+              <form id="contact-form" action="https://formspree.io/f/xqpzgbgo" method="POST">
+                <!-- Formspree hidden fields -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission - ACSS">
+                <input type="hidden" name="_replyto" value="email">
+                
+                <input type="hidden" name="subject_type" id="subject-type-input" value="general">
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label" for="contact-name">Full Name *</label>
-      <input type="text" id="contact-name" name="name" class="form-control" required autocomplete="name" placeholder="Your full name">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="contact-email">Email Address *</label>
-      <input type="email" id="contact-email" name="email" class="form-control" required autocomplete="email" placeholder="you@example.com">
-    </div>
-  </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-name">Full Name *</label>
+                    <input type="text" id="contact-name" name="name" class="form-control" required autocomplete="name" placeholder="Your full name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-email">Email Address *</label>
+                    <input type="email" id="contact-email" name="email" class="form-control" required autocomplete="email" placeholder="you@example.com">
+                  </div>
+                </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label" for="contact-org">Organization <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
-      <input type="text" id="contact-org" name="organization" class="form-control" autocomplete="organization" placeholder="Your organization">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="contact-phone">Phone <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
-      <input type="tel" id="contact-phone" name="phone" class="form-control" autocomplete="tel" placeholder="+211 912 345 678">
-    </div>
-  </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-org">Organization <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
+                    <input type="text" id="contact-org" name="organization" class="form-control" autocomplete="organization" placeholder="Your organization">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-phone">Phone <span style="color:var(--text-tertiary);font-weight:400;font-size:0.75rem;">(optional)</span></label>
+                    <input type="tel" id="contact-phone" name="phone" class="form-control" autocomplete="tel" placeholder="+211 912 345 678">
+                  </div>
+                </div>
 
-  <div class="form-group">
-    <label class="form-label" for="contact-subject">Subject *</label>
-    <input type="text" id="contact-subject" name="subject" class="form-control" required placeholder="How can we help you?">
-  </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-subject">Subject *</label>
+                  <input type="text" id="contact-subject" name="subject" class="form-control" required placeholder="How can we help you?">
+                </div>
 
-  <div class="form-group">
-    <label class="form-label" for="contact-message">Message *</label>
-    <textarea id="contact-message" name="message" class="form-control" rows="4" required placeholder="Tell us more about your inquiry..." maxlength="1500"></textarea>
-    <p class="char-count"><span id="char-remaining">1500</span> characters remaining</p>
-  </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">Message *</label>
+                  <textarea id="contact-message" name="message" class="form-control" rows="4" required placeholder="Tell us more about your inquiry..." maxlength="1500"></textarea>
+                  <p class="char-count"><span id="char-remaining">1500</span> characters remaining</p>
+                </div>
 
-  <div class="form-group">
-    <label style="display:flex;gap:0.6rem;align-items:flex-start;cursor:pointer;">
-      <input type="checkbox" name="newsletter" style="margin-top:3px;accent-color:var(--blue);">
-      <span style="font-size:0.82rem;color:var(--text-tertiary);">Subscribe me to ACSS updates and impact reports</span>
-    </label>
-  </div>
+                <div class="form-group">
+                  <label style="display:flex;gap:0.6rem;align-items:flex-start;cursor:pointer;">
+                    <input type="checkbox" name="newsletter" style="margin-top:3px;accent-color:var(--blue);">
+                    <span style="font-size:0.82rem;color:var(--text-tertiary);">Subscribe me to ACSS updates and impact reports</span>
+                  </label>
+                </div>
 
-  <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;" id="contact-submit-btn">
-    Send Message
-  </button>
-  <p style="font-size:0.75rem;text-align:center;color:var(--text-tertiary);margin-top:0.6rem;">
-    Your information is secure and will never be shared.
-  </p>
-</form>
+                <button type="submit" class="btn btn-blue btn-lg" style="width:100%;justify-content:center;">
+                  Send Message
+                </button>
+                <p style="font-size:0.75rem;text-align:center;color:var(--text-tertiary);margin-top:0.6rem;">
+                  Your information is secure and will never be shared.
+                </p>
+              </form>
 
               <!-- Success Message -->
               <div id="form-success" class="form-success">
@@ -823,7 +807,7 @@
       </div>
     </section>
 
-    <!-- ══ OFFICES ════════════════════════════════════════════ -->
+    <!-- OFFICES -->
     <section class="offices-section" aria-labelledby="offices-heading">
       <div class="container">
         <div class="section-header center" style="margin-bottom:0;" data-reveal>
@@ -876,7 +860,7 @@
       </div>
     </section>
 
-    <!-- ══ MAP ════════════════════════════════════════════════ -->
+    <!-- MAP -->
     <section class="map-section" aria-label="ACSS headquarters location map">
       <div class="map-wrapper">
         <iframe
@@ -896,7 +880,7 @@
       </div>
     </section>
 
-    <!-- ══ CONTACT FAQ ════════════════════════════════════════ -->
+    <!-- FAQ -->
     <section class="contact-faq" aria-labelledby="contact-faq-heading">
       <div class="container">
         <div class="section-header center" style="margin-bottom:2.5rem;" data-reveal>
@@ -1042,40 +1026,11 @@
       charCount.textContent = remaining < 0 ? '0' : remaining;
     });
 
-    // ── FORMSPREE SUBMISSION ──
-    const form = document.getElementById('contact-form');
-    const successDiv = document.getElementById('form-success');
-    const formContainer = document.querySelector('.contact-form-card');
-
-    form?.addEventListener('submit', function(e) {
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-
-      if (!name || !email || !message) {
-        e.preventDefault();
-        alert('Please fill in all required fields.');
-        return false;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        e.preventDefault();
-        alert('Please enter a valid email address.');
-        return false;
-      }
-
-      const btn = document.getElementById('contact-submit-btn');
-      if (btn) {
-        btn.innerHTML = '<span class="spinner"></span> Sending...';
-        btn.disabled = true;
-      }
-
-      // Form will submit to Formspree
-      // Formspree will redirect to a success page
-      return true;
-    });
-
     // ── CHECK FOR FORMSPREE SUCCESS REDIRECT ──
     // Formspree redirects to the same page with ?_formspree=success
+    const form = document.getElementById('contact-form');
+    const successDiv = document.getElementById('form-success');
+
     if (window.location.search.includes('_formspree=success')) {
       if (form) form.style.display = 'none';
       if (successDiv) successDiv.classList.add('active');
